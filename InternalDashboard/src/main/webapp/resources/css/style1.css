@@ -1,0 +1,302 @@
+body {
+    font-family: "Lato", sans-serif;
+  }
+  *{margin:0; padding:0; font-family: 'Roboto', sans-serif; outline:0!important;}
+ul, li{list-style:none; margin:0; padding:0;}
+body{background:#6B51D2;}
+img{border:0!important;}
+h1,h2,h3,h4,h5{padding:0; margin:0;}
+h1{font-weight:700;font-size:22px; letter-spacing:1.5px; float:left; padding:14px 30px 0 0;}
+p{padding:0; margin:0;}
+a, a:hover{text-decoration:none;}
+    
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color:white;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  /* style back button */
+  .btn{
+  background-color: #c0c0c0;
+  border: black;
+  color: black;
+  margin-left:100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+  border-radius: 50%;
+  
+  }
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: black;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 5px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: rgb(233, 181, 233);
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: rgb(233, 181, 233);
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+    
+.rightMainSection{background:#F6F7FA; border-radius: 40px 0px 0px 40px;}
+.userTabBtnSec {padding-top:42px; padding-bottom:42px;}
+
+.userBackBtn{position:relative; top:14px;}
+.userTabBtnSecTop{text-align:center; padding:0 0 50px;}
+.userTabBtnSecTop h1{font-size:14px; font-weight:900; padding:0 0 20px; float:none; letter-spacing:0.5px;}
+.userTabBtnSecTop img{border-radius:50%; margin:0 0 10px;}
+.userTabBtnSecTop p{font-weight:500; font-size:17px; color:#6B51D2; letter-spacing:0.5px;}
+
+/*== Tab Button Starts ==*/
+.tabList{position:relative; left:15px;}
+.tabList li a{color:#999; font-size:13px; display:block; width:100%; height:40px; line-height:40px; padding:0 10px; border-radius:22px 0 0 22px; letter-spacing:0.5px;}
+.tabList li.active{background-color:transparent;}
+.tabList li.active a{background:#fff; color:#6B51D2;}
+/*== Tab Button Ends ==*/
+
+.userTabContentSec{background:#fff;}
+.userTabContentSec .tabcon h2.tabHead{background:#6B51D2 url(../images/accordion-down-arrow.png) no-repeat 95% 50%; margin:0 0 10px; color:#fff; padding:10px 30px; font-size:21px; border-radius:10px; cursor:pointer;}
+
+/*== Tab Content Section Starts ==*/
+.tabcon h2{display:none;}
+
+.tabPersonalInfoCon{margin:0 auto; max-width:500px; padding:65px 0 100px;}
+.tabPersonalInfoCon h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; padding:0 0 30px;}
+
+.tabPersonalInfoCon form label{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.tabPersonalInfoCon form input[type="text"]{border:0; width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px;}
+.tabPersonalInfoCon form input[type="tel"]{border:1px solid #eee; width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px;}
+.tabPersonalInfoCon form input[type="submit"]{padding:9px 0; width:160px; margin:25px auto 50px;}
+
+/* Address Info Starts */
+.tabAddressInfoCon{padding:50px 0 100px; width:85%; margin:0 auto 15px;}
+.tabAddressInfoCon h3{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 20px; letter-spacing:0.5px;}
+.addressInfoCon{background:#f6f7fa; margin:0 0 15px; padding:30px; border-radius:15px; position:relative;}
+.addressInfoCon a.editAddBtn, .addressInfoCon a.billeditAddBtn, .addressInfoCon a.correditAddBtn{position:absolute; right:30px; top:30px;}
+.addressInfoCon a.closeEditBtn, .addressInfoCon a.billcloseEditBtn, .addressInfoCon a.corrcloseEditBtn{position:absolute; right:30px; top:30px;}
+
+.addressInfoCon form label{width:100%; font-size:12px; color:#999; margin:0 0 4px;}
+.addressInfoCon form input[type="text"]{background:#fff; border:0; padding:15px; width:100%; border-radius:7px; margin:0 0 12px;}
+.addressInfoCon form button{padding-left:30px; padding-right:30px; margin:0 auto;}
+/* Address Info Ends */
+
+/* Wallet Info Starts */
+.tabWalletInfoCon{width:70%; margin:0 auto; padding:80px 0 200px;}
+.tabWalletInfoCon .headingSection{border:0; margin:0; padding:0 0 30px;}
+.tabWalletInfoCon .headingSection h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; float:left; padding:5px 0 0;}
+.tabWalletInfoCon .headingSection p{float:right; width:130px;}
+.walletBalTable{height:239px; overflow:hidden;}
+.walletBalTable tr{border-bottom:3px solid #fff;}
+.walletBalTable tr td{font-size:15px; overflow-wrap:anywhere; font-weight:900;}
+.walletBalTable tr td img{border-radius:50%;}
+.walletBalTable tr td:nth-child(1){border-radius:10px 0 0 10px;}
+.walletBalTable tr td:nth-child(4){border-radius:0 10px 10px 0;}
+.walletTabLink{text-align:center; padding:60px 0 0;}
+.walletTabLink a{color:#6B51D2; font-size:14px; letter-spacing:0.5px;}
+.walletTabLink a:hover{text-decoration:underline;}
+.mobTableHeading{display:none; color:#999; padding:0 0 7px; font-size:13px; font-weight:400; letter-spacing:0.5px;}
+
+/* Card Info Starts */
+.tabCardInfoCon{width:90%; margin:0 auto; padding:70px 0 200px;}
+.tabCardInfoCon h3{padding:14px 30px 0 0; font-size:22px; letter-spacing:1px; font-weight:700; float:left; color:#333;}
+.tabCardInfoCon .headSearchContainer input[type="text"]{width:330px;}
+.tabCardInfoCon .headingSection p{float:right; width:150px; position:relative; top:6px;}
+.tabCardInfoCon .headingSection p a.borderButton{margin:0 15px 0 0;}
+
+.cardInfoHeading ul{overflow:hidden; padding:0 0 15px;}
+.cardInfoHeading ul li{float:left; padding:0; color:#999; font-size:12px; letter-spacing:1px;}
+
+.tabCardInfoCon tr{border-bottom:3px solid #fff;}
+.tabCardInfoCon tr td{background:#f6f7fa; font-size:12px;}
+.tabCardInfoCon tr td:nth-child(1){font-weight:700; font-size:15px; border-radius:10px 0 0 10px;}
+.tabCardInfoCon tr td:nth-child(6){border-radius:0 10px 10px 0;}
+/*.tabCardInfoCon tr td:nth-child(7){width:6%; border-radius:0 10px 10px 0; font-size:0;}*/
+
+.statusActiveCard{background:#c0ffd2; display:block; text-align:center; padding:8px 0; border-radius:7px; width:72px;}
+.statusInactiveCard{background:#cdcdcd; display:block; text-align:center; padding:8px 0; border-radius:7px; width:72px;}
+.actionBlockCard{background:#ff3b3b; color:#fff; display:block; text-align:center; padding:8px 0; border-radius:7px;}
+.actionBlockCard:hover{background:#fe0000; color:#fff;}
+.actionActivateCard{background:#54c25f; color:#fff; display:block; text-align:center; padding:8px 0; border-radius:7px;}
+.actionActivateCard:hover{background:#45bc51; color:#fff;}
+.tabCardInfoCon tr td:nth-child(7) a img{width:4px; height:auto;}
+/* Card Info Ends */
+
+/* Kyc Status Starts */
+.tabKycStatusCon{padding:80px 0 0; text-align:center;}
+.tabKycStatusCon h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; padding:0 0 30px;}
+.kycImage{padding:0 0 30px;}
+.tabKycStatusCon .kycImage img{width:250px; height:auto;}
+.kycCompleted{display:none;}
+.kycPending{display:none;}
+
+.descNremarksTable{padding:0 0 30px;}
+.descNremarksTable .table{width:100%;}
+.descNremarksTable .table-striped tbody tr:nth-of-type(odd){background-color:#f6f7fa;}
+.descNremarksTable .table tr th:first-child{width:40%;}
+.descNremarksTable .table tr th:last-child{width:60%;}
+.descNremarksTable .table tbody tr{color:#666;}
+.descNremarksTable .table tbody tr td{line-height:20px; background:none;}
+
+
+.tabKycInfoCon{margin:0 auto; max-width:500px; padding:0 0 100px; text-align:left;}
+.tabKycInfoCon h4{padding:0 0 30px;}
+.tabKycInfoCon form label{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.tabKycInfoCon .form-control{border:2px solid #fff;}
+.tabKycInfoCon form input[type="text"]{width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px; background:#f6f7fa;}
+.tabKycInfoCon form input[type="file"]{width:100%; height:50px; padding:10px; border-radius:7px; background:#f6f7fa;}
+.tabKycInfoCon form select{height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px; background:#f6f7fa;}
+.tabKycInfoCon form button[type="submit"]{margin:0 auto; display:block; padding:9px 30px;}
+
+/* Kyc Status ends */
+
+@media screen and (max-width:1121px){
+	h1{padding:15px 0; float:none; width:100%;}
+	.exporttoexcel{float:none; position:absolute; right:15px; top:15px;}
+	.headSearchContainer{float:none;}
+	.headSearchContainer input[type="text"], .tabCardInfoCon .headSearchContainer input[type="text"]{width:100%;}
+	.tabCardInfoCon .headSearchContainer{padding:0 0 15px;}
+}
+
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 1121px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+@media screen and (max-width:767px){
+	.logo{width:90px; margin:15px auto 15px;}
+	.rightMainSection{border-radius:0; min-height:auto;}
+	/*== Mobile Menu Starts ==*/
+	.mobileMenuIcon{display:block; position: absolute;right: 15px;top: 38px;}
+	.navCustomWrapper{background:rgba(0,0,0,0.93);position:fixed;z-index:999;width:100%;height:100%;left:0;top:0;padding:60px 0 0;}
+	.mobmenuclose{display:block; width:20px; height:auto; cursor:pointer; z-index:12; position:fixed; right:22px; top:35px;}
+	.mobmenuclose img{width:100%; height:20px;}
+	
+	.navigationMenu ul li.active {border-radius:0;}
+	/*== Mobile Menu Ends ==*/
+	
+	.dashBalance{margin:0 0 30px;}
+	
+	/*====== Users List Page Starts ======*/
+	.regAccNames .dataTables_wrapper table tr th{display:none;}
+	.regAccNames tr th{display:none;}
+	.regAccNames tr td {display: block;text-align: center;width: 100%!important;}
+	.userTransferBtn{width:300px; padding:9px 0; margin:0 auto 10px; float:none;}
+	.userMoreBtn{width:300px; padding:9px 0; margin:0 auto 10px; float:none;}
+	.regAccNames tr td:nth-child(1) {border-radius:10px 10px 0 0;}
+	.regAccNames tr td:nth-child(6) {border-radius:0 0 10px 10px;}
+	
+	.transferModalLeft{width:100%; margin:0 0 15px;}
+	.transferModalRight{width:100%;}
+	.transferModal .modal-dialog{max-width:100%; width:auto;}
+	/*====== Users List Page Ends ======*/
+	
+	/*====== Add Customer Page Starts ======*/
+	.formElementConLR .form-group{width:100%; float:none;}
+	.formElementCon.formElementConLR .form-group input[type="text"]{width:100%;}
+	.formElementCon .form-group input[type="text"], .formElementCon .form-group select, .formElementCon .form-group input[type="date"], .formElementCon .form-group input[type="number"], .formElementCon .form-group input[type="email"]{width:100%;}
+	/*====== Add Customer Page Ends ======*/
+	
+	/*== Tab Content Section Starts ==*/
+	.userTabBtnSecTop{padding:0;}
+	.userTabBtnSecBottom{display:none;}
+	.tabcon h2{display:block;}
+	.userTabContentSec{background:none;}
+	.userTabContentSec .tabs{background:#fff; border-radius:10px; margin:0 0 15px;}
+	.tabPersonalInfoCon{margin:0; max-width:100%; padding:30px;}
+	
+	.tabAddressInfoCon{padding:30px 0;}
+	
+	.tabWalletInfoCon{padding:30px; margin:0; width:100%;}
+	.tabWalletInfoCon .headingSection h3{float:none; width:100%; padding:0 0 15px;}
+	.tabWalletInfoCon .headingSection p{float:none; width:100%;}
+	.walletBalHeading{display:none;}
+	.walletBalTable tr th{display:none;}
+	.walletBalTable tr {background:none;}
+	.walletBalTable tr td {display: block;text-align: center;width: 100%!important;}
+	.walletBalTable tr td:nth-child(1) {border-radius:10px 10px 0 0;}
+	.walletBalTable tr td:nth-child(4) {border-radius:0 0 10px 10px;}
+	.mobTableHeading{display:block;}
+	.walletTabLink{padding:30px 0 0;}
+	
+	.tabCardInfoCon tr th{display:none;}
+	.tabCardInfoCon{padding:30px 0;}
+	.tabCardInfoCon .headingSection h3{padding:0 0 15px; float:none;}
+	.tabCardInfoCon .headingSection p{width:50%;}
+	.cardInfoHeading{display:none;}
+	.tabCardInfoCon .dataTables_wrapper table tr th{display:none;}
+	.tabCardInfoCon tr td{display: block;text-align: center;width: 100%!important;}
+	.tabCardInfoCon tr td:nth-child(1){padding:30px 0 15px; border-radius:10px 10px 0 0;}
+	.tabCardInfoCon tr td:nth-child(6){border-radius:0 0 10px 10px; font-size:14px; padding:15px 0 30px;}
+	.statusActiveCard, .statusInactiveCard{margin:0 auto;}
+	.actionBlockCard, .actionActivateCard{width:100px; margin:0 auto; padding:10px 0;}
+	
+	.tabKycStatusCon{height:auto; padding:30px 0;}
+	
+	.tabTransacHistCon{padding:30px 0;}
+	.tabTransacHistCon .headSearchContainer{margin:15px 0 0;}
+	.tabTransacHistCon .headSearchContainer input[type="text"]{width:100%;}
+	.tabTransacHistCon .exporttoexcel{right:0}
+	.tabTransacHistCon h3{float:none; padding:40px 0 0;}
+	.tabTransacHistCon table tr th{display:none;}
+	.tabTransacHistCon tr td {display: block; width: 100%; text-align: center;}
+	.tabTransacHistCon tr td:nth-child(1){border-radius:10px 10px 0 0;}
+	.tabTransacHistCon tr td:nth-child(9){border-radius:0 0 10px 10px;}
+	/*== Tab Content Section Ends ==*/
+	
+	/*====== Prefund Page Starts ======*/
+	.prefundReqTableHeadings{display:none;}
+	.prefundTable tr th{display:none;}
+	.prefundTable tr td{display:block; width:100%!important; text-align:center;}
+	.statusPending, .statusApproved{margin:0 auto;}
+	.prefundTable tr td:nth-child(1){border-radius:10px 10px 0 0;}
+	.prefundTable tr td:nth-child(7){border-radius:0 0 10px 10px;}
+	.prefundPage .headingSection a.blueButton{float:none;}
+	/*====== Prefund Page Ends ======*/
+	
+	/*====== New Prefund Request Page Starts ======*/
+	.newPrefundReqLeft{float:none; width:100%; padding:0;}
+	.newPrefundReqLeft .convertCurrencyInputSec{padding:0 0 35px;}
+	.newPrefundReqRight{float:none; width:100%;}
+	.newPrefundReqRight h2{padding:0 0 20px;}
+	.newPrefundReqRight input[type="button"]{position:static;}
+	/*====== New Prefund Request Page Ends ======*/
+	
+	.bulkCustRegistration{margin:0 auto;}
+}
+
+
+
