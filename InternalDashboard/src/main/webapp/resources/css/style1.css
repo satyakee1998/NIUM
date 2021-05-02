@@ -77,13 +77,13 @@ a, a:hover{text-decoration:none;}
 .userTabBtnSecTop{text-align:center; padding:0 0 50px;}
 .userTabBtnSecTop h1{font-size:14px; font-weight:900; padding:0 0 20px; float:none; letter-spacing:0.5px;}
 .userTabBtnSecTop img{border-radius:50%; margin:0 0 10px;}
-.userTabBtnSecTop p{font-weight:500; font-size:17px; color:#6B51D2; letter-spacing:0.5px;}
+.userTabBtnSecTop p{font-weight:500; font-size:17px; color:#ff8080; letter-spacing:0.5px;}
 
 /*== Tab Button Starts ==*/
 .tabList{position:relative; left:15px;}
 .tabList li a{color:#999; font-size:13px; display:block; width:100%; height:40px; line-height:40px; padding:0 10px; border-radius:22px 0 0 22px; letter-spacing:0.5px;}
 .tabList li.active{background-color:transparent;}
-.tabList li.active a{background:#fff; color:#6B51D2;}
+.tabList li.active a{background:#00ffff; color:#800040;}
 /*== Tab Button Ends ==*/
 
 .userTabContentSec{background:#fff;}
@@ -117,7 +117,7 @@ a, a:hover{text-decoration:none;}
 .tabWalletInfoCon .headingSection{border:0; margin:0; padding:0 0 30px;}
 .tabWalletInfoCon .headingSection h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; float:left; padding:5px 0 0;}
 .tabWalletInfoCon .headingSection p{float:right; width:130px;}
-.walletBalTable{height:239px; overflow:hidden;}
+/* .walletBalTable{height:239px; overflow:hidden;} */
 .walletBalTable tr{border-bottom:3px solid #fff;}
 .walletBalTable tr td{font-size:15px; overflow-wrap:anywhere; font-weight:900;}
 .walletBalTable tr td img{border-radius:50%;}

@@ -155,7 +155,7 @@
 							</div>
 					
                     
-							<h2 class="tabHead">Wallet info</h2>
+							<h2 class="tabHead">Wallet information</h2>
 							<div class="tabs" id="tab3">
 								<div class="tabWalletInfoCon">
 									<div class="headingSection">
@@ -175,8 +175,7 @@
 											</thead>
 											<tbody id="walletbalancetable">
 												<!-- <tr>
-													<td align="center" valign="middle"><img
-														src="resources/images/sgd.jpg" width="40" height="40"
+													<td align="center" valign="middle"><img src="resources/images/sgd.jpg" width="40" height="40"
 														alt="USD" title="USD"></td>
 													<td align="left" valign="middle"></td>
 													<td align="left" valign="middle"><span
