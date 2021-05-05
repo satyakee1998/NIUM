@@ -1,15 +1,15 @@
 //Fetch UserDetails//
 window.onload=function FetchUserDetails()
 {
-var userID = document.getElementById('MemberID').value;
-swal({
+var userID = document.getElementById('CusHasID').value;
+/*swal({
  title: "Loading...",
 text: " Please Wait....",
 icon: "resources/images/loader.gif",
 button: false,
 closeOnClickOutside: false,
 closeOnEsc: false
-});
+});*/
 $.ajax({
 type :'GET',
 url :'/userDetails',
@@ -17,7 +17,7 @@ data:{newuserID:userID},
 timeout : 100000,
 
 success : function(data) {
-swal.close()
+/*swal.close()*/
 
 
 var obj = JSON.parse(data);
@@ -147,7 +147,7 @@ document.getElementById('status_text').value =userstatus['text'];
 function getwalletbalance() {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	var tempcutomerhashid =  urlParams.get('member_ID');
+	var tempcutomerhashid =  urlParams.get('Customer_has_ID');
 	var tempwallethashid =  urlParams.get('wallet_hash_ID');
 	
 

@@ -23,31 +23,31 @@ import com.dashboard.utility.Constant;
 public class FetchUserList {
 ///// private static final com.sun.org.slf4j.internal.Logger LOGGER = LoggerFactory.getLogger(PostPrefund.class);
 
-String currency = null;
-String username = null;
-
+	/*
+	 * String currency = null; String username = null;
+	 */
 String jsonResponse = null;
 String response = null;
 
-public String fetchcustomer (String STARTING,String ENDING,String oauthAccessToken,String Agent_Code,String Sub_Agent_code,HttpServletRequest request,String nisg) {
+public String fetchcustomer (String order,String oauthAccessToken,String ipax,String clientkahash,HttpServletRequest request,String nisg) {
 
 
 //String endings = "1000";
 try {
 
-URL url = new URL( nisg+"/api/v1/getUserWithAgentCode/"+Agent_Code+"/"+Sub_Agent_code);
+URL url = new URL( nisg+"/api/v1/fetchCustomer?order="+order+"&page=&size=&email=&mobile=");
 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 conn.setDoOutput(true);
-conn.setRequestMethod("POST");
+conn.setRequestMethod("GET");
 conn.setRequestProperty("Content-Type", "application/json");
-////conn.setRequestProperty("clientHasID", clientkahash);
-////conn.setRequestProperty("x-api-key", ipax);
+conn.setRequestProperty("clientHasID", clientkahash);
+conn.setRequestProperty("x-api-key",ipax);
 conn.setRequestProperty("Authorization", "Bearer " + oauthAccessToken);
 
-String input = "{\"fromNumber\":\""+STARTING+"\",\"limit\":\""+ENDING+"\"}";
-OutputStream os = conn.getOutputStream();
-os.write(input.getBytes());
-os.flush();
+/*
+ * OutputStream os = conn.getOutputStream(); os.write(input.getBytes());
+ * os.flush();
+ */
 BufferedReader br = new BufferedReader(new InputStreamReader(
 (conn.getInputStream())));
 while ((jsonResponse = br.readLine())!= null) {
@@ -102,6 +102,7 @@ return e.getMessage();
 
 return result;
 }
+
 }
 
 

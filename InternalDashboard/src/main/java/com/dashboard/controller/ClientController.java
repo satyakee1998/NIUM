@@ -53,14 +53,16 @@ public class ClientController{
 		
 		return new ModelAndView("userlist");
 	}
+	//Details Button Controller////From Userlist Page///
 	@RequestMapping(value = "/nisginternalcustomer", method = RequestMethod.GET)
-	public ModelAndView User(@RequestParam("member_ID") String memberId,@RequestParam("wallet_hash_ID") String wallethashid,HttpServletRequest request) {
-		request.getSession().setAttribute("member_Id", memberId);
+	public ModelAndView User(@RequestParam("Customer_has_ID") String customerHashId,@RequestParam("wallet_hash_ID") String wallethashid,HttpServletRequest request) 
+	{
+		request.getSession().setAttribute("Customer_has_Id", customerHashId);
 		request.getSession().setAttribute("wallet_hash_Id", wallethashid);
 
 		ModelAndView mv = new ModelAndView("userdetails");
 
-		mv.addObject("memberId", memberId);
+		mv.addObject("customerhasId", customerHashId);
 		mv.addObject("wallethashId", wallethashid);
 
 		return mv;	}
@@ -73,16 +75,16 @@ public class ClientController{
         String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password,request, Constant.OauthUrl);
 		FetchUserList user = new FetchUserList();
 		
-		String response = user.fetchcustomer(Constant.STARTING,Constant.ENDING,oauthAccessToken,Constant.Agent_Code,Constant.Sub_Agent_Code,request,  Constant.NIUMUrl);
+		String response = user.fetchcustomer(Constant.Order,oauthAccessToken,Constant.xApiKey,Constant.clientHasId,request,Constant.NIUMUrl);
 		JSONArray fetchUserjsonArray = new JSONArray(response);
 		JSONObject fetchUserjsonObject = fetchUserjsonArray.getJSONObject(0);
-		request.getSession().setAttribute("nameof", fetchUserjsonObject.getString("memberId"));
-		request.getSession().setAttribute("nameof", fetchUserjsonObject.getString("instarem_wallet_hash_id"));
+		request.getSession().setAttribute("nameof", fetchUserjsonObject.getString("customerHashId"));
+		request.getSession().setAttribute("nameof", fetchUserjsonObject.getString("walletHashId"));
 
-		String customerhashid = fetchUserjsonObject.getString("memberId");
-		String wallethashid = fetchUserjsonObject.getString("instarem_wallet_hash_id");
-		System.out.println("MemberID:"+customerhashid);
-		System.out.println("instarem_wallet_hash_id:"+wallethashid);
+		String customerhashid = fetchUserjsonObject.getString("customerHashId");
+		String wallethashid = fetchUserjsonObject.getString("walletHashId");
+		System.out.println("CustomerHasID:"+customerhashid);
+		System.out.println("WalletHashID"+wallethashid);
 		
 //		FetchUserDetails details = new FetchUserDetails();
 //		details.fetchuserdetails(oauthAccessToken,userid,request,Constant.OauthUrl);
@@ -98,7 +100,7 @@ public class ClientController{
         String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password,request, Constant.OauthUrl);
 		FetchUserList user = new FetchUserList();
 		
-		String resp = user.fetchcustomer(Constant.STARTING,Constant.ENDING,oauthAccessToken,Constant.Agent_Code,Constant.Sub_Agent_Code,request,  Constant.NIUMUrl);
+		String resp = user.fetchcustomer(Constant.Order,oauthAccessToken,Constant.xApiKey,Constant.clientHasId,request,Constant.NIUMUrl);
 		JSONArray fetchUserjsonArray = new JSONArray(resp);
 		JSONObject fetchUserjsonObject = fetchUserjsonArray.getJSONObject(0);
 		request.getSession().setAttribute("nameof", fetchUserjsonObject.getString("memberId"));
@@ -118,19 +120,20 @@ public class ClientController{
 	
 	
 //User details
-	@RequestMapping(value = "/userDetails", method = RequestMethod.GET)
-	@ResponseBody
-	public String userDetails(HttpSession session , HttpServletRequest request, @RequestParam("newuserID")String newuserID) {
-		OauthAuthentication newauth = new OauthAuthentication();
-
-		String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password,request, Constant.OauthUrl);
-		String newUserID = (String) request.getSession().getAttribute("member_Id");
-		FetchUserList userDetails = new FetchUserList();
-		 return userDetails.mmgetuserdetails(oauthAccessToken,newUserID, Constant.MMUrl);
-		 
-
-	}
-
+	
+	 @RequestMapping(value = "/userDetails", method = RequestMethod.GET)
+	 
+	 @ResponseBody public String userDetails(HttpSession session ,
+	 HttpServletRequest request, @RequestParam("newuserID")String newuserID) {
+	 OauthAuthentication newauth = new OauthAuthentication();
+	 
+	 String oauthAccessToken = newauth.createOauthToken(Constant.Email,
+	 Constant.Password,request, Constant.OauthUrl); 
+	 String newUserID = (String)request.getSession().getAttribute("Customer_has_Id"); 
+	 FetchUserList userDetails =new FetchUserList(); return
+	 userDetails.mmgetuserdetails(oauthAccessToken,newUserID, Constant.MMUrl);
+	 }
+	 
 	/* fetch wallet details */
 @RequestMapping(value = "/walletInfo", method = RequestMethod.GET)
 @ResponseBody

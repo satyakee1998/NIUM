@@ -14,4 +14,5 @@ public interface Constant {
 	String NIUMUrl="http://developer.sandbox.stylopay.com:8081/NISG";
 	String xApiKey = "tDwjoMFPiL1XDYTjb8H313BWbmFlh1ve21usj7Oj";
 	String clientHasId = "cebd2dfb-b010-48ef-b2f2-ac7e640e3a68";
+	String Order = "DESC"; 
 }

@@ -26,10 +26,10 @@
   <button class="dropdown-btn">Select Program 
     <i class="fa fa-caret-down"></i>
   </button>
-  <div class="dropdown-container">
+  <!-- <div class="dropdown-container">
     <a href="#">NIUM</a>
     <a href="#">MM</a>
-  </div>
+  </div> -->
   <a href="/fetchCustomerDetails">Client Details</a>
   <a href="/mmlogout">Logout</a>  
 </div>
@@ -44,11 +44,12 @@
 <thead>
 <tr>
 <th>Serial No:</th>
-<th id="userId">Member ID</th>
+<th id="userId">Customer Hash ID</th>
 <th>First Name</th>
 <th>Middle Name</th>
 <th>Last Name</th>
 <th>Email</th>
+<th>Phone Number</th>
 <th>More</th>
 </tr>
 </thead>

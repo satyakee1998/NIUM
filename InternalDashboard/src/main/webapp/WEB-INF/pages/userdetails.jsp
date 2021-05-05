@@ -23,7 +23,7 @@
 <title>User Details</title>
 </head>
 <body onload="FetchUserDetails">
-	<input type="hidden" id="MemberID" value="${member_Id}">
+	<input type="hidden" id="CusHasID" value="${Customer_has_Id}">
 	<input type="hidden" id="email_Id" value="${Uemail}">
 	<input type="hidden" id="hiddencardid" value=""> 
 	<input type="hidden" id="usercardid" value="">

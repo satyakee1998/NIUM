@@ -29,9 +29,9 @@ $.ajax({
 				
 				/*var str = val['creationDateTime'].toString();*/
 				
-				var table = '<tr><td>'+(i+1)+"\n"+'</td><td id="userId'+(i+1)+'" value="'+val['memberId']+'" >'+val['memberId']+"\n"+'</td><td>'
-				+val['firstName']+"\n"+'</td><td>'+val['middleName']+"\n"+'</td><td>'+val['lastName']+"\n"+'</td><td>'+val['email_ID']+"\n"+'</td><td>'
-				+ "<a href = '/nisginternalcustomer?member_ID="+val['memberId']+"&wallet_hash_ID="+val['instarem_wallet_hash_id']+"'  class='bo'> Details</a> <div class='clearfix'></div></td></tr>" ;
+				var table = '<tr><td>'+(i+1)+"\n"+'</td><td id="userId'+(i+1)+'" value="'+val['customerHashId']+'" >'+val['customerHashId']+"\n"+'</td><td>'
+				+val['firstName']+"\n"+'</td><td>'+val['middleName']+"\n"+'</td><td>'+val['lastName']+"\n"+'</td><td>'+val['email']+"\n"+'</td><td>'+val['mobile']+"\n"+'</td><td>'
+				+ "<a href = '/nisginternalcustomer?Customer_has_ID="+val['customerHashId']+"&wallet_hash_ID="+val['walletHashId']+"'  class='bo'> Details</a> <div class='clearfix'></div></td></tr>" ;
 				$('#body').append(table)
 }
 }
