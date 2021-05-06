@@ -39,7 +39,18 @@
    
     <!------ Right Main Section Starts ------>
     <div class="col-xl-10 col-lg-10 col-md-9 col-sm-12 rightMainSection">
-    <h1 style="text-align: center;">USER LIST</h1>
+   <%--  <!-- Heading Search Section Starts -->
+        <div class="headingSection">
+          <!-- <h1>Registered Accounts</h1> -->
+          <div class="headSearchContainer">
+            <!-- <input   onchange ="sortcustom()" type="text" id="mySearchId" placeholder="search by email or phone number"> -->
+          <a href="#" onclick="sortcustom()"><img src="resources/nisg/images/searchicon.png" width="48" height="50" alt="Search" title="Search" /></a> </div>
+         <button  onclick="makelist('<%= session.getAttribute("DashBoardName") %>')" class="exporttoexcel">Export To .CSV</button>
+         <a href="/nisgaddcustomer" class="blueButton addCustBtn" >Add Customer</a>
+          <div class="clearfix"></div>
+        </div>
+        <!-- Heading Search Section Ends --> --%>
+    <h1 style="text-align: center;">USER LIST</h1> <a href="/nisgaddcustomer" class="blueButton addCustBtn" >Add Customer</a>
     <br>
     <br>
 

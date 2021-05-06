@@ -1,0 +1,566 @@
+@import url('../css/fonts.css');
+
+*{margin:0; padding:0; font-family: 'Roboto', sans-serif; outline:0!important;}
+ul, li{list-style:none; margin:0; padding:0;}
+body{background:#6B51D2;}
+img{border:0!important;}
+h1,h2,h3,h4,h5{padding:0; margin:0;}
+h1{font-weight:700;font-size:22px; letter-spacing:1.5px; float:left; padding:14px 30px 0 0;}
+p{padding:0; margin:0;}
+a, a:hover{text-decoration:none;}
+input:focus{outline:none;}
+.height30{height:30px;}
+.topBottomPadding{padding-top:60px; padding-bottom:70px;}
+.blueButton{ color:#fff; font-size:13px; display:block; text-align:center; border-radius:8px; padding:9px 0;}
+.blueButton:hover{color:#fff;}
+.borderButton{ font-size:13px; display:block; text-align:center; border-radius:8px; padding:9px 0;}
+.borderButton:hover{background:#f6f7fa;}
+h2.modal-title{font-size:22px; font-weight:700;}
+.modal .card label{color:#999; font-size:12px; letter-spacing:1px;}
+.modal .card{border:0;}
+.modal .card .card-body{padding:0;}
+.modal .borderButton{padding-left:25px; padding-right:25px;}
+.modal .blueButton{padding-left:25px; padding-right:25px;}
+
+.greenText{color:#54c25f;}
+.redText{color:#fe0000;}
+
+::placeholder {
+  color: #ccc;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #ccc;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #ccc;
+}
+
+/*==== DATA TABLE STARTS ====*/
+table tr th{color:#999; font-size:12px; letter-spacing:1px; font-weight:300; border:0;}
+table tr td{background:#f6f7fa; font-size:12px; border:0; overflow-wrap:anywhere;}
+.table td, .table th {vertical-align:middle!important; border:0!important;}
+/*==== DATA TABLE ENDS ====*/
+
+.qrclogo{width:50px; position:fixed; bottom:15px; right:15px; background:#fff; border-radius:50%;}
+.qrclogo img{width:100%; height:auto;}
+
+/*== Logo Section Starts ==*/
+.logo {
+    width: 150px;
+    margin: 50px auto 75px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.logo a img{width:100%; height:auto;}
+/*== Logo Section Ends ==*/
+
+/*== Menu Section Starts ==*/
+.leftMenuSection{padding:0;}
+
+.navigationMenu{font-weight:500; font-style:normal; padding:0 0 0 20px;}
+.navigationMenu ul li a{color:#fff; padding:0 0 0 25px; height:40px; line-height:40px; font-size:14px; letter-spacing:0.5px; display:block;}
+.navigationMenu ul li a:hover{color:#f0f904; text-decoration:none;}
+.navigationMenu ul li.active{background:#F6F7FA; border-radius:22px 0 0 22px;}
+.navigationMenu ul li.active a{color:#6B51D2; width:100%; font-weight:600;}
+.navigationMenu ul li a em{width:23px; text-align:center;}
+.navigationMenu ul li.dashboard em{font-size:16px;}
+.navigationMenu ul li.users em{font-size:20px; position:relative; top:2px;}
+.navigationMenu ul li.logout em{font-size:18px; position:relative; top:2px;}
+
+.menuGap{height:50px;}
+/*== Menu Section Ends ==*/
+
+/*== Mobile Menu Starts ==*/
+.mobileMenuIcon{display:none;}
+.mobmenuclose{display:none;}
+/*== Mobile Menu Ends ==*/
+
+
+.rightMainSection{background:#F6F7FA; border-radius: 40px 0px 0px 40px;}
+
+
+/*== Dashboard Starts ==*/
+.dashboardContent{margin:60px auto 70px;}
+.dashboardContent h1{font-size:25px; padding:0 0 20px; float:none;}
+.whBox{background:#fff; border-radius:22px; padding:40px 25px; height:450px; overflow:hidden;}
+.whBox h2{color:#999;font-size:15px;font-weight:500;letter-spacing:1px; padding:0 0 20px;}
+
+.balIconSec{float: left;width: 13%;margin: 0 5% 0 0;}
+.balIconSec img{width: 100%;height: auto; border-radius:50%;}
+.balCnameSec{float: left;width: 48%;font-weight: 900; font-size:15px; padding:7px 0 0;}
+.dashBalAmount{float: left;width: 34%;font-weight: 900; font-size:15px; padding:7px 0 0; border:0;}
+.dashBalance ul{padding:0 0 90px;}
+.dashBalance ul li{padding:0 0 20px;}
+.dashBalMaskingBtn{position:absolute; bottom:0; left:0; width:100%; background:#fff; height:190px; border-radius:0px 0 22px 22px;}
+.dashBalance p a{ font-size:13px; display:block; text-align:center; padding:9px 0; border-radius:8px; margin:0 15%; position:absolute; bottom:42px; width:70%; background:#fff;}
+.dashBalance p a:hover{color:#fff;}
+
+.convertCurrencyInputSec input[type="number"]{background:#e5e2ee; border:none; padding:23px 132px 23px 15px; width:100%;border-radius:11px; color:000; font-size:18px; font-weight:700; letter-spacing:2px; margin:0 0 10px;}
+
+.currencyInputSelectHolder{position:relative;}
+/* Custom Select Design Starts */
+.customDropDown{right:14px; position:absolute; display:inline-block; margin-top:0; background:#fff; top:16px; padding:6px 10px;border-radius:10px; width:135px;}   
+.customDropDown .button span{display:inline-block; background-repeat:no-repeat; width:100%; height:28px; padding:4px 0 0 40px; background-size:28px; font-weight:700; letter-spacing:1px;}    
+.customDropDown .button a{position:absolute; left:0; top:0; width:100%; height:100%; font-size:0; background:url(../images/selectimg.png) no-repeat 94% 50%;}
+.customDropDown select{display: none;}       
+.customDropDown .select-list{position:absolute; top:0; left:0; z-index:1; margin-top:42px; padding:10px 0; background-color:#fff; border-radius:8px;}       
+.customDropDown .select-list li{display:none;}     
+.customDropDown .select-list li span{display:inline-block; min-height:42px; min-width:135px; width:100%; padding:16px 15px 5px 64px; background-color:#fff; background-position:left 10px center; background-repeat:no-repeat; font-size:14px; text-align:left; color:#000; box-sizing:border-box; background-size:28px;}
+.customDropDown .select-list li span:hover, .customDropDown .select-list li span:focus {opacity:1;} 
+
+.customDropDown1{right:14px; position:absolute; display:inline-block; margin-top:0; background:#fff; top:16px; padding:6px 10px;border-radius:10px; width:135px;}   
+.customDropDown1 .button1 span{display:inline-block; background-repeat:no-repeat; width:100%; height:28px; padding:4px 0 0 40px; background-size:28px; font-weight:700; letter-spacing:1px;}    
+.customDropDown1 .button1 a{position:absolute; left:0; top:0; width:100%; height:100%; font-size:0; background:url(../images/selectimg.png) no-repeat 94% 50%;}
+.customDropDown1 select{display: none;}       
+.customDropDown1 .select-list1{position:absolute; top:0; left:0; z-index:1; margin-top:42px; padding:10px 0; background-color:#fff; border-radius:8px;}       
+.customDropDown1 .select-list1 li{display:none;}     
+.customDropDown1 .select-list1 li span{display:inline-block; min-height:42px; min-width:135px; width:100%; padding:16px 15px 5px 64px; background-color:#fff; background-position:left 10px center; background-repeat:no-repeat; font-size:14px; text-align:left; color:#000; box-sizing:border-box; background-size:28px;}
+.customDropDown1 .select-list1 li span:hover, .customDropDown1 .select-list1 li span:focus {opacity:1;} 
+/* Custom Select Design Ends */   
+.customslectText p{color:#999; font-size:12px; font-weight:500;}
+.customslectText p span{color:#000; font-weight:700;}
+.dashConvertCurrency{position:relative;}
+
+/* coming soon converter */
+.dashConCurrMask{
+position: absolute;
+background: #fff;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+text-align: center;
+opacity: 0.8;
+font-size: 18px;
+font-weight: 900;
+color: #e83e8c;
+padding: 12px 0 0;
+border-radius: 22px;
+}
+.dashConvertCurrency input[type="submit"]{width:70%; margin:0 auto;}
+/*== Dashboard Ends ==*/
+
+.headingSection{padding:0 0 30px; }
+.headSearchContainer{position:relative; float:left;}
+.headSearchContainer input[type="text"]{background:#eae4ff; border:0; width:439px; height:50px; border-radius:30px; padding:0 15px; line-height:50px; font-size:13px; }
+.headSearchContainer input[type="text"]:focus{background:#fff; border:1px solid #eae4ff;}
+.headSearchContainer a img{width: 16px; height: auto; position: absolute; right: 18px; top: 16px;}
+.exporttoexcel{float: right; border: 0; background: #5fcb77; color: #fff; width: 160px; height: 42px; border-radius: 9px; font-size: 14px; margin: 4px 0 0;}
+.exporttoexcel:hover{background: #419e56;}
+
+/*====== Users List Page Starts ======*/
+.regAccNames table tbody tr{border-bottom:3px solid #f6f7fa;}
+.regAccNames tr td{margin:0; font-size:13px; overflow-wrap:anywhere; background:#fff;}
+.regAccNames tr td img{border-radius:50%;}
+.regAccNames tr td:nth-child(1){border-radius:10px 0 0 10px; width:7%}
+.regAccNames tr td:nth-child(2){font-weight:900; width:20%;}
+.regAccNames tr td:nth-child(2) a{color:#000;}
+.regAccNames tr td:nth-child(2) a:hover{color:#6b51d2;}
+.regAccNames tr td:nth-child(3){width:20%;}
+.regAccNames tr td:nth-child(4){width:11%;}
+.regAccNames tr td:nth-child(5){width:10%;}
+.regAccNames tr td:nth-child(6){width:10%;}
+.regAccNames tr td:nth-child(7){border-radius:0 10px 10px 0; width:22%;}
+
+.userTransferBtn{width:97px; padding:9px 0; margin:0 3% 0 0; float:left;}
+.userMoreBtn{width:97px; padding:9px 0; margin:0 0 0 3%; float:left;}
+
+/*== Transfer Modal Starts ==*/
+.innerTransferModal{padding:20px;}
+.transferModal .modal-content{background-color:#f6f7fa; border-radius:15px;}
+.transferModal .modal-dialog{max-width:750px}
+.transferModalLeft{width:40%;}
+.transferModalRight{width:55%; background:#fff; border-radius:15px; padding:15px;}
+
+.transferModalLeft h2{padding:15px 0 20px; font-size:20px; font-weight:900;}
+.transferModalNameandImage{font-weight:900; padding:0 0 40px;}
+.transferModalNameandImage img{border-radius:50%; margin:0 15px 0 0; width:45px; height:auto;}
+.transferModalFundingChannel h3{font-size:12px; color:#999; padding:0 0 15px; letter-spacing:0.5px;}
+.transferModalFundingChannel select{background:#fff; border:0; width:180px; height:40px; line-height:30px; padding:0 7px; font-size:13px; border-radius:5px; font-weight:700;}
+.transferModal h3{color:#999; font-size:14px; letter-spacing:0.5px; padding:0 0 10px;}
+.transferModal .convertCurrencyInputSec input[type="submit"]{padding:9px 0; width:200px; margin:0 auto;}
+/*== Transfer Modal Ends ==*/
+.addCustBtn{float:right; margin:5px 7px 0 0; padding:10px 30px; border-radius:9px;}
+/*====== Users List Page Ends ======*/
+
+/*====== Add Customer Page Starts ======*/
+.addCustSection{margin:0 auto; padding:65px 0 100px;}
+.addCustSection .userBackBtn{float:left; padding:5px 15px 0 0;}
+.addCustSection h2{font-size:18px; color:#999; letter-spacing:0.5px; padding:25px 0 15px;}
+.formElementCon .form-group{color:#7679a0; font-weight:500; font-size:13px; letter-spacing:0.5px;}
+.formElementConLR .form-group{width:50%; float:left;}
+.formElementCon .form-group input[type="text"], 
+.formElementCon .form-group select, 
+.formElementCon .form-group input[type="date"],
+.formElementCon .form-group input[type="number"],
+.formElementCon .form-group input[type="email"]{width:97%; border:2px solid #eff1f7; border-radius:10px; height:50px; line-height:50px; font-size:13px;}
+.formElementCon.formElementConLR .form-group input[type="text"]{width:95%;}
+.formElementCon .form-group label span{color:#F00;}
+.addCustSection button[type="submit"]{width:130px;}
+.addCustSection input[type="checkbox"]{width:20px; height:20px;}
+.addCustSection .formBillingAddress{float:left; width:100%; margin:15px 0 10px 0px; text-align:right; padding:0 22px 0 0;}
+.addCustSection .formBillingAddress .addChkBox span{position:relative; top:-5px; font-size:13px; letter-spacing:1px; font-weight:700;}
+.addCustSubmitBtn{float:right; margin:20px 21px 0 0;}
+/*====== Add Customer Page Ends ======*/
+
+/*====== User Page Starts ======*/
+.userTabBtnSec {padding-top:42px; padding-bottom:42px;}
+
+.userBackBtn{position:relative; top:14px;}
+.userTabBtnSecTop{text-align:center; padding:0 0 50px;}
+.userTabBtnSecTop h1{font-size:14px; font-weight:900; padding:0 0 20px; float:none; letter-spacing:0.5px;}
+.userTabBtnSecTop img{border-radius:50%; margin:0 0 10px;}
+.userTabBtnSecTop p{font-weight:500; font-size:17px; letter-spacing:0.5px;}
+
+/*== Tab Button Starts ==*/
+.tabList{position:relative; left:15px;}
+.tabList li a{color:#999; font-size:13px; display:block; width:100%; height:40px; line-height:40px; padding:0 10px; border-radius:22px 0 0 22px; letter-spacing:0.5px;}
+.tabList li.active a{background:#fff; }
+/*== Tab Button Ends ==*/
+
+.userTabContentSec{background:#fff;}
+.userTabContentSec .tabcon h2.tabHead{background:#6B51D2 url(../images/accordion-down-arrow.png) no-repeat 95% 50%; margin:0 0 10px; color:#fff; padding:10px 30px; font-size:21px; border-radius:10px; cursor:pointer;}
+
+/*== Tab Content Section Starts ==*/
+.tabcon h2{display:none;}
+
+.tabPersonalInfoCon{margin:0 auto; max-width:500px; padding:65px 0 100px;}
+.tabPersonalInfoCon h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; padding:0 0 30px;}
+
+.tabPersonalInfoCon form label{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.tabPersonalInfoCon form input[type="text"]{border:0; width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px;}
+.tabPersonalInfoCon form input[type="tel"]{border:1px solid #eee; width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px;}
+.tabPersonalInfoCon form input[type="submit"]{padding:9px 0; width:160px; margin:25px auto 50px;}
+
+/* Address Info Starts */
+.tabAddressInfoCon{padding:50px 0 100px; width:85%; margin:0 auto 15px;}
+.tabAddressInfoCon h3{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 20px; letter-spacing:0.5px;}
+.addressInfoCon{background:#f6f7fa; margin:0 0 15px; padding:30px; border-radius:15px; position:relative;}
+.addressInfoCon a.editAddBtn, .addressInfoCon a.billeditAddBtn, .addressInfoCon a.correditAddBtn{position:absolute; right:30px; top:30px;}
+.addressInfoCon a.closeEditBtn, .addressInfoCon a.billcloseEditBtn, .addressInfoCon a.corrcloseEditBtn{position:absolute; right:30px; top:30px;}
+
+.addressInfoCon form label{width:100%; font-size:12px; color:#999; margin:0 0 4px;}
+.addressInfoCon form input[type="text"]{background:#fff; border:0; padding:15px; width:100%; border-radius:7px; margin:0 0 12px;}
+.addressInfoCon form button{padding-left:30px; padding-right:30px; margin:0 auto;}
+/* Address Info Ends */
+
+/* Wallet Info Starts */
+.tabWalletInfoCon{width:70%; margin:0 auto; padding:80px 0 200px;}
+.tabWalletInfoCon .headingSection{border:0; margin:0; padding:0 0 30px;}
+.tabWalletInfoCon .headingSection h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; float:left; padding:5px 0 0;}
+.tabWalletInfoCon .headingSection p{float:right; width:130px;}
+.walletBalTable{height:239px; overflow:hidden;}
+.walletBalTable tr{border-bottom:3px solid #fff;}
+.walletBalTable tr td{font-size:15px; overflow-wrap:anywhere; font-weight:900;}
+.walletBalTable tr td img{border-radius:50%;}
+.walletBalTable tr td:nth-child(1){border-radius:10px 0 0 10px;}
+.walletBalTable tr td:nth-child(4){border-radius:0 10px 10px 0;}
+.walletTabLink{text-align:center; padding:60px 0 0;}
+.walletTabLink a{ font-size:14px; letter-spacing:0.5px;}
+.walletTabLink a:hover{text-decoration:underline;}
+.mobTableHeading{display:none; color:#999; padding:0 0 7px; font-size:13px; font-weight:400; letter-spacing:0.5px;}
+/* Wallet Info Ends */
+
+/* Card Info Starts */
+.tabCardInfoCon{width:90%; margin:0 auto; padding:70px 0 200px;}
+.tabCardInfoCon h3{padding:14px 30px 0 0; font-size:22px; letter-spacing:1px; font-weight:700; float:left; color:#333;}
+.tabCardInfoCon .headSearchContainer input[type="text"]{width:330px;}
+.tabCardInfoCon .headingSection p{float:right; width:150px; position:relative; top:6px;}
+.tabCardInfoCon .headingSection p a.borderButton{margin:0 15px 0 0;}
+
+.cardInfoHeading ul{overflow:hidden; padding:0 0 15px;}
+.cardInfoHeading ul li{float:left; padding:0; color:#999; font-size:12px; letter-spacing:1px;}
+
+.tabCardInfoCon tr{border-bottom:3px solid #fff;}
+.tabCardInfoCon tr td{background:#f6f7fa; font-size:12px;}
+.tabCardInfoCon tr td:nth-child(1){font-weight:700; font-size:15px; border-radius:10px 0 0 10px;}
+.tabCardInfoCon tr td:nth-child(6){border-radius:0 10px 10px 0;}
+/*.tabCardInfoCon tr td:nth-child(7){width:6%; border-radius:0 10px 10px 0; font-size:0;}*/
+
+.statusActiveCard{background:#c0ffd2; display:block; text-align:center; padding:8px 0; border-radius:7px; width:72px;}
+.statusInactiveCard{background:#cdcdcd; display:block; text-align:center; padding:8px 0; border-radius:7px; width:72px;}
+.actionBlockCard{background:#ff3b3b; color:#fff; display:block; text-align:center; padding:8px 0; border-radius:7px;}
+.actionBlockCard:hover{background:#fe0000; color:#fff;}
+.actionActivateCard{background:#54c25f; color:#fff; display:block; text-align:center; padding:8px 0; border-radius:7px;}
+.actionActivateCard:hover{background:#45bc51; color:#fff;}
+.tabCardInfoCon tr td:nth-child(7) a img{width:4px; height:auto;}
+/* Card Info Ends */
+
+/* Kyc Status Starts */
+.tabKycStatusCon{ padding:80px 0 0; text-align:center;}
+.tabKycStatusCon h3{font-size:22px; font-weight:700; letter-spacing:1px; color:#333; padding:0 0 30px;}
+.tabKycStatusCon .kycImage img{width:250px; height:auto;}
+.kycCompleted{display:none;}
+.kycPending{display:none;}
+.descNremarksTable{padding:0 0 30px;}
+.descNremarksTable .table{width:100%;}
+.descNremarksTable .table-striped tbody tr:nth-of-type(odd){background-color:#f6f7fa;}
+.descNremarksTable .table tr th:first-child{width:40%;}
+.descNremarksTable .table tr th:last-child{width:60%;}
+.descNremarksTable .table tbody tr{color:#666;}
+.descNremarksTable .table tbody tr td{line-height:20px; background:none;}
+
+.tabKycInfoCon{margin:0 auto; max-width:500px; padding:0 0 100px; text-align:left;}
+.tabKycInfoCon h4{padding:0 0 30px;}
+.tabKycInfoCon form label{color:#999; width:100%; font-size:12px; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.tabKycInfoCon .form-control{border:2px solid #fff;}
+.tabKycInfoCon form input[type="text"]{width:100%; height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px; background:#f6f7fa;}
+.tabKycInfoCon form input[type="file"]{width:100%; height:50px; padding:10px; border-radius:7px; background:#f6f7fa;}
+.tabKycInfoCon form select{height:50px; padding:0 15px; line-height:50px; border-radius:7px; margin:0 0 12px; background:#f6f7fa;}
+.tabKycInfoCon form button[type="submit"]{margin:0 auto; display:block; padding:9px 30px;}
+
+
+
+/* / Kyc Status ends / */
+
+/*== FAQs Page Starts ==*/
+.faqSection{width:90%; margin:0 auto; padding:60px 0;}
+.accordion_head{font-size:20px; font-weight:700; position:relative; padding:0 0 30px; cursor:pointer;}
+.plusminus{position:absolute; right:0;}
+.accordion_body{display:none; padding:0 0 30px;}
+.plusminus{position:absolute; right:0; border:2px solid #9857D9; display:inline-block; color:#9857D9; width:25px; height:25px; line-height:20px; text-align:center; border-radius:50%;}
+.accordion_body h3{font-size:16px; font-weight:700; padding:0 0 15px;}
+.accordion_body p{font-size:13px; font-weight:400; padding:0 0 15px; color:#999; letter-spacing:0.5px; width:80%;}
+/*== FAQs Page Ends ==*/
+
+/* custom pagination */
+.paginationCon {
+float: right;
+color: #000;
+font-size: 13px;
+letter-spacing: 1px;
+padding: 0;
+}
+
+.paginationCon span.pagiBack, .paginationCon span.pagiForw {
+cursor: pointer;
+}
+/* custom pagination */
+.paginationCon .pagiBack {
+padding: 0 15px 0 10px;
+}
+
+
+.dateNpagiCon {
+
+padding: 15px 0;
+margin: 0 0 20px;
+}
+/* custom pagination */
+
+/* Transaction history Starts */
+.tabTransacHistCon .headSearchContainer input[type="text"]{width:350px;}
+
+.srtEndDate {float: left;}
+#reportrange{float:left;}
+.customDateRange{background:#6B51D2 url(../images/calendaricon.png) no-repeat 96% 50%; padding:8px 40px 8px 15px; font-size:14px; border-radius:5px; color:#fff; cursor:pointer;}
+.dateGoBtn{float:left;}
+.dateGoBtn input[type="button"]{background:#f6f7fa; border:1px solid #ddd; width:37px; height:34px; position:relative; top:-6px; left:5px; border-radius:5px; cursor:pointer;}
+.tabTransacHistCon .dateNpagiCon{padding:15px 0 3px;}
+
+.tableOuterOverflowHidden{position:relative;}
+.tabTransacHistCon .dataTables_wrapper{margin:10px 0 0;}
+.tabTransacHistCon{width:95%; margin:0 auto; padding:70px 0; position:relative;}
+.tabTransacHistCon h3{font-size:22px; font-weight:700; float:left; letter-spacing:1px; color:#333; padding:14px 30px 0 0;}
+.tabTransacHistCon tr{border-bottom:3px solid #fff;}
+.tabTransacHistCon tr td:nth-child(1){font-size:14px; border-radius:10px 0 0 10px;}
+.tabTransacHistCon tr td:nth-child(2){font-weight:700;}
+.tabTransacHistCon tr td:nth-child(9){border-radius:0 10px 10px 0;}
+/* Transaction history ends */
+
+/*== Tab Content Section Ends ==*/
+
+/*====== User Page Ends ======*/
+
+
+/*====== Prefund Page Starts ======*/
+.prefundPage .headingSection a.blueButton{float:right; padding:9px 20px; position:relative; top:4px;}
+
+.prefundTable table tbody tr{border-bottom:3px solid #f6f7fa;}
+.prefundTable table tr td{background:#fff; font-size:12px; overflow-wrap:anywhere;}
+.prefundTable tr td:nth-child(1){border-radius:10px 0 0 10px;}
+.prefundTable tr td:nth-child(1) img{border-radius:50%;}
+.prefundTable tr td:nth-child(2){font-size:14px; font-weight:700;}
+.prefundTable tr td:nth-child(7){border-radius:0 10px 10px 0;}
+.statusPending{padding:8px 0; background:#FFEDC0; display:block; text-align:center; border-radius:7px; width:72px;}
+.statusApproved{padding:8px 0; background:#98FB98; display:block; text-align:center; border-radius:7px; width:72px;}
+.statusDecline {
+padding: 8px 0;
+background: #FF3B3B;
+display: block;
+text-align: center;
+border-radius: 7px;
+width: 72px;
+color: #fff;
+}
+/*====== Prefund Page Ends ======*/
+
+/*====== New Prefund Request Page Starts ======*/
+.preFundBackBtn{float:left; position:relative; top:5px; padding:0 20px 0 0;}
+.newPrefundReqPage h1{padding:0;}
+
+.newPrefundReqLeft{float:left; width:36%; padding:0 0 0 27px;}
+.newPrefundReqLeft h2{color:#999; font-size:14px; font-weight:500; letter-spacing:1px; padding:0 0 10px;}
+.newPrefundReqLeft .convertCurrencyInputSec input[type="text"]{background:#fff;}
+.newPrefundReqLeft .customDropDown{background:#f6f7fa;}
+.newPrefundReqLeft .convertCurrencyInputSec{padding:0 0 50px;}
+.newPrefundReqLeft .customslectText p{font-size:11px; letter-spacing:0.5px;}
+.newPrefundReqLeft .currencyInputSelectHolder{padding:0 0 30px;}
+.newPrefundReqLeft .convertCurrencyInputSec label{color:#999; font-size:11px; width:100%; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.newPrefundReqLeft .convertCurrencyInputSec input[type="text"]{background:#fff url(../images/bluecalendaricon.png) no-repeat 95% 50%; border:0; padding:10px; width:100%; margin:0 0 20px; border-radius:8px;}
+/* / jquery ui Date Picker Starts / */
+.newPrefundReqPage .ui-datepicker-prev{background:url(../images/pagibackbtn.png) no-repeat 50% 50%; border:0}
+.newPrefundReqPage .ui-state-hover.ui-datepicker-prev-hover{background:url(../images/pagibackbtn.png) no-repeat 50% 50%; border:0;}
+.newPrefundReqPage .ui-datepicker-next{background:url(../images/paginextbtn.png) no-repeat 50% 50%; border:0}
+.newPrefundReqPage .ui-state-hover.ui-datepicker-next-hover{background:url(../images/paginextbtn.png) no-repeat 50% 50%; border:0;}
+.newPrefundReqPage .ui-state-highlight,
+.newPrefundReqPage .ui-widget-content .ui-state-highlight,
+.newPrefundReqPage .ui-widget-header .ui-state-highlight{border:1px solid #6B51D2; background:#6B51D2; color:#fff; border-radius:5px;}
+
+.newPrefundReqPage .ui-state-active,
+.newPrefundReqPage .ui-widget-content .ui-state-active,
+.newPrefundReqPage .ui-widget-header .ui-state-active,
+.newPrefundReqPage a.ui-button:active,
+.newPrefundReqPage .ui-button:active, .ui-button.ui-state-active:hover{border:1px solid #9982f4; background:#9982f4; color:#fff; border-radius:5px;}
+
+.newPrefundReqPage .ui-datepicker td span,
+.newPrefundReqPage .ui-datepicker td a{text-align:center; border:0; background:none;}
+.newPrefundReqPage .ui-widget.ui-widget-content{border:0; box-shadow:0 12px 26px 0 #ddd; margin:5px 0 0;}
+.newPrefundReqPage table.ui-datepicker-calendar tr td{background:none;}
+.newPrefundReqPage table.ui-datepicker-calendar tr th{color:#f265e3; font-weight:normal;}
+.newPrefundReqPage .ui-widget-header{border:1px solid #f6f7fa; background:#f6f7fa;}
+/* / jquery ui Date Picker Ends / */
+.newPrefundReqRight{width:45%; float:right;}
+.newPrefundReqRight h2{color:#333; font-size:14px; padding:0 0 30px; font-weight:700; letter-spacing:1px;}
+.newPrefundReqRight label{color:#999; font-size:11px; width:100%; padding:0; margin:0 0 4px; letter-spacing:0.5px;}
+.newPrefundReqRight input[type="text"]{background:#fff; border:0; padding:10px; width:100%; margin:0 0 20px; border-radius:8px;}
+.newPrefundReqRight textarea{width:100%; padding:10px; background:#fff; border:0; border-radius:8px; margin:0 0 20px; min-height:200px; max-height:200px; height:200px;}
+.newPrefundReqRight input[type="button"]{position:absolute; left:42px; bottom:247px; width:170px;}
+
+/*====== New Prefund Request Page Ends ======*/
+
+/*====== Bulk Customer Registration Starts ======*/
+.bulkCustRegistration{background:#fff; max-width:500px; margin:60px auto; padding:20px; border-radius:10px;}
+.dloadSampleLink{text-align:right; padding:0 0 15px;}
+
+.uploadSampleInput{padding:0 0 10px;}
+.uploadSampleInput input[type="file"]{padding:7px; border-radius:7px; width:100%; border:1px solid #ddd;}
+.bulkCustRegistration p{font-size:13px;}
+.bulkCustRegistration p em{color:#ffb018; font-size:16px;}
+.bulkCustRegistration button[type="submit"]{padding:9px 20px; margin:20px auto 0;}
+/*====== Bulk Customer Registration Ends ======*/
+
+
+
+@media screen and (max-width:1121px){
+	h1{padding:15px 0; float:none; width:100%;}
+	.exporttoexcel{float:none; position:absolute; right:15px; top:15px;}
+	.headSearchContainer{float:none;}
+	.headSearchContainer input[type="text"], .tabCardInfoCon .headSearchContainer input[type="text"]{width:100%;}
+	.tabCardInfoCon .headSearchContainer{padding:0 0 15px;}
+}
+
+@media screen and (max-width:767px){
+	.logo{width:90px; margin:15px auto 15px;}
+	.rightMainSection{border-radius:0; min-height:auto;}
+	/*== Mobile Menu Starts ==*/
+	.mobileMenuIcon{display:block; position: absolute;right: 15px;top: 38px;}
+	.navCustomWrapper{background:rgba(0,0,0,0.93);position:fixed;z-index:999;width:100%;height:100%;left:0;top:0;padding:60px 0 0;}
+	.mobmenuclose{display:block; width:20px; height:auto; cursor:pointer; z-index:12; position:fixed; right:22px; top:35px;}
+	.mobmenuclose img{width:100%; height:20px;}
+	
+	.navigationMenu ul li.active {border-radius:0;}
+	/*== Mobile Menu Ends ==*/
+	
+	.dashBalance{margin:0 0 30px;}
+	
+	/*====== Users List Page Starts ======*/
+	.regAccNames .dataTables_wrapper table tr th{display:none;}
+	.regAccNames tr th{display:none;}
+	.regAccNames tr td {display: block;text-align: center;width: 100%!important;}
+	.userTransferBtn{width:300px; padding:9px 0; margin:0 auto 10px; float:none;}
+	.userMoreBtn{width:300px; padding:9px 0; margin:0 auto 10px; float:none;}
+	.regAccNames tr td:nth-child(1) {border-radius:10px 10px 0 0;}
+	.regAccNames tr td:nth-child(7) {border-radius:0 0 10px 10px;}
+	
+	.transferModalLeft{width:100%; margin:0 0 15px;}
+	.transferModalRight{width:100%;}
+	.transferModal .modal-dialog{max-width:100%; width:auto;}
+	/*====== Users List Page Ends ======*/
+	
+	/*== Tab Content Section Starts ==*/
+	.userTabBtnSecTop{padding:0;}
+	.userTabBtnSecBottom{display:none;}
+	.tabcon h2{display:block;}
+	.userTabContentSec{background:none;}
+	.userTabContentSec .tabs{background:#fff; border-radius:10px; margin:0 0 15px;}
+	.tabPersonalInfoCon{margin:0; max-width:100%; padding:30px;}
+	
+	.tabAddressInfoCon{padding:30px 0;}
+	
+	.tabWalletInfoCon{padding:30px; margin:0; width:100%;}
+	.tabWalletInfoCon .headingSection h3{float:none; width:100%; padding:0 0 15px;}
+	.tabWalletInfoCon .headingSection p{float:none; width:100%;}
+	.walletBalHeading{display:none;}
+	.walletBalTable tr th{display:none;}
+	.walletBalTable tr {background:none;}
+	.walletBalTable tr td {display: block;text-align: center;width: 100%!important;}
+	.walletBalTable tr td:nth-child(1) {border-radius:10px 10px 0 0;}
+	.walletBalTable tr td:nth-child(4) {border-radius:0 0 10px 10px;}
+	.mobTableHeading{display:block;}
+	.walletTabLink{padding:30px 0 0;}
+	
+	.tabCardInfoCon tr th{display:none;}
+	.tabCardInfoCon{padding:30px 0;}
+	.tabCardInfoCon .headingSection h3{padding:0 0 15px; float:none;}
+	.tabCardInfoCon .headingSection p{width:50%;}
+	.cardInfoHeading{display:none;}
+	.tabCardInfoCon .dataTables_wrapper table tr th{display:none;}
+	.tabCardInfoCon tr td{display: block;text-align: center;width: 100%!important;}
+	.tabCardInfoCon tr td:nth-child(1){padding:30px 0 15px; border-radius:10px 10px 0 0;}
+	.tabCardInfoCon tr td:nth-child(6){border-radius:0 0 10px 10px; font-size:14px; padding:15px 0 30px;}
+	.statusActiveCard, .statusInactiveCard{margin:0 auto;}
+	.actionBlockCard, .actionActivateCard{width:100px; margin:0 auto; padding:10px 0;}
+	
+	.tabKycStatusCon{height:auto; padding:30px 0;}
+	
+	.tabTransacHistCon{padding:30px 0;}
+	.tabTransacHistCon .headSearchContainer{margin:15px 0 0;}
+	.tabTransacHistCon .headSearchContainer input[type="text"]{width:100%;}
+	.tabTransacHistCon .exporttoexcel{right:0}
+	.tabTransacHistCon h3{float:none; padding:40px 0 0;}
+	.tabTransacHistCon table tr th{display:none;}
+	.tabTransacHistCon tr td {display: block; width: 100%; text-align: center;}
+	.tabTransacHistCon tr td:nth-child(1){border-radius:10px 10px 0 0;}
+	.tabTransacHistCon tr td:nth-child(9){border-radius:0 0 10px 10px;}
+	/*== Tab Content Section Ends ==*/
+	
+	/*====== Prefund Page Starts ======*/
+	.prefundReqTableHeadings{display:none;}
+	.prefundTable tr th{display:none;}
+	.prefundTable tr td{display:block; width:100%!important; text-align:center;}
+	.statusPending, .statusApproved{margin:0 auto;}
+	.prefundTable tr td:nth-child(1){border-radius:10px 10px 0 0;}
+	.prefundTable tr td:nth-child(7){border-radius:0 0 10px 10px;}
+	.prefundPage .headingSection a.blueButton{float:none;}
+	/*====== Prefund Page Ends ======*/
+	
+	/*====== New Prefund Request Page Starts ======*/
+	.newPrefundReqLeft{float:none; width:100%; padding:0;}
+	.newPrefundReqLeft .convertCurrencyInputSec{padding:0 0 35px;}
+	.newPrefundReqRight{float:none; width:100%;}
+	.newPrefundReqRight h2{padding:0 0 20px;}
+	.newPrefundReqRight input[type="button"]{position:static;}
+	/*====== New Prefund Request Page Ends ======*/
+	.bulkCustRegistration{margin:0 auto;}
+}
+
+/* custom swal */
+.swal-overlay{background-color: rgba(255,255,255,.95);}
+.swal-modal{border-radius: 20px; box-shadow:0 0 50px #f6f7fa;}
+.swal-button{background-color:#9857D9; font-weight:300;}

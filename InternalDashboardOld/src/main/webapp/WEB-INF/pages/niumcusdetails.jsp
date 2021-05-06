@@ -26,7 +26,7 @@
 <title>User Details</title>
 </head>
 <body onload=" CustomerDetails">
-	<%-- <input type="hidden" id="MemberID" value="${member_ID}"> --%>
+	<input type="hidden" id="MemberID" value="${member_ID}"> 
 	<input type="hidden" id="email_Id" value="${Uemail}">
 
 
@@ -326,7 +326,7 @@
 												</tr>
 											</thead>
 											<tbody id="walletbalancetable">
-												<tr>
+												<!-- <tr>
 													<td align="center" valign="middle"><img
 														src="resources/images/sgd.jpg" width="40" height="40"
 														alt="USD" title="USD"></td>
@@ -336,7 +336,7 @@
 													<td align="left" valign="middle"><span
 														class="mobTableHeading" id="walletcurrency">holding
 															balance</span></td>
-												</tr>
+												</tr> -->
 											</tbody>
 										</table>
 									</div>
@@ -346,9 +346,9 @@
 							<!-- Exchange Rate Tab starts -->
 							<h2 class="tabHead">Tab 7</h2>
 							<!-- Exchange Rate Div Starts -->
-							<div class="tabs" id="tab7">
+							<div class="tabs" id="tab7"> <!-- Div for separating the tab from other tabs -->
 							<h2 class="tabHead">Exchange Rate</h2>
-							<div class="tabExchangeRate">
+							<div class="tabPersonalInfoCon">   <!-- Div for Fetching Form Style from CSS -->
 									<h3>Exchange Rate</h3>
 									<!-- Personal info Form fields Starts -->
 									<form>
