@@ -708,8 +708,8 @@ public class ClientController {
 		mvsame.addObject("bstate", createUserBean.getBilling_state());
 		mvsame.addObject("bpost", createUserBean.getBilling_post_code());
 		NIUMCreateCustomerBean customerBeanNium = new NIUMCreateCustomerBean();////// Object Creation of NIUMCustomerBean////
-		customerBeanNium.setEmail(createUserBean.getEmall());
-		request.getSession().setAttribute("customemailsession",createUserBean.getEmall());
+		customerBeanNium.setEmail(createUserBean.getEmail());
+		request.getSession().setAttribute("customemailsession",createUserBean.getEmail());
 		String pass ="ChangeMe@123";
 		customerBeanNium.setPassword(pass);
 	
@@ -719,7 +719,7 @@ public class ClientController {
 		customerBeanNium.setAgent_code((String) request.getSession().getAttribute(Constant.Agent_Code));
 		customerBeanNium.setSub_agent_code((String) request.getSession().getAttribute(Constant.Sub_Agent_Code));
 		customerBeanNium.setClient_agent_subAgent_name("Stylopay");
-		customerBeanNium.setUsername(createUserBean.getEmall());
+		customerBeanNium.setUsername(createUserBean.getEmail());
 		customerBeanNium.setCountry_isd_code("91");
 		customerBeanNium.setPreferred_currency("EUR");
 		
@@ -736,20 +736,20 @@ public class ClientController {
 		customerBeanNium.setBillingState(createUserBean.getBilling_state());
 		
 		
-if (createUserBean.getBillingzip() == null || createUserBean.getBillingzip().equals("") || createUserBean.getBillingzip().equals(" ") ) {
+if (createUserBean.getBilling_post_code() == null || createUserBean.getBilling_post_code().equals("") || createUserBean.getBilling_post_code().equals("")) {
 	customerBeanNium.setBillingZipCode("NA");
 	customerBeanNium.setCorrespondenceZipCode("NA");
 }  else {
-		customerBeanNium.setBillingZipCode(createUserBean.getBillingzip());
-		customerBeanNium.setCorrespondenceZipCode(createUserBean.getBillingzip() );
+		customerBeanNium.setBillingZipCode(createUserBean.getBilling_post_code());
+		customerBeanNium.setCorrespondenceZipCode(createUserBean.getBilling_post_code() );
 }
 
 
 
-if (createUserBean.getDzip() == null || createUserBean.getDzip().equals("") || createUserBean.getDzip().equals(" ") ) {
+if (createUserBean.getPost_code() == null || createUserBean.getPost_code().equals("") || createUserBean.getPost_code().equals(" ") ) {
 customerBeanNium.setDeliveryZipCode("NA");
 }  else {
-customerBeanNium.setDeliveryZipCode(createUserBean.getDzip());
+customerBeanNium.setDeliveryZipCode(createUserBean.getPost_code());
 }
 
 		
@@ -786,7 +786,7 @@ customerBeanNium.setDeliveryZipCode(createUserBean.getDzip());
 		customerBeanNium.setNationality(createUserBean.getNationality());
 		customerBeanNium.setPhone_type("M");
 		customerBeanNium.setPreferredName(createUserBean.getFirst_name());
-		customerBeanNium.setUsername(createUserBean.getEmall());
+		customerBeanNium.setUsername(createUserBean.getEmail());
 		
 		
 		

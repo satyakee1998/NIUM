@@ -600,7 +600,7 @@
                   </div>
                   <div class="form-group">
                     <label class="control-label">Zipcode</label>
-                    <input type="text"   onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="10" name="destinationzip" id="postalold"  value=""   class="form-control">
+                    <input type="text"   onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="10" name="post_code" id="postalold"  value=""   class="form-control">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Address Line 1<span>*</span></label>
@@ -869,7 +869,7 @@
                   </div>
                   <div class="form-group">
                     <label class="control-label">Zipcode</label>
-                    <input type="text" id="postalnew"  onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="10"  value="" name="billingzip"   class="form-control">
+                    <input type="text" id="postalnew"  onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="10"  value="" name="billing_post_code"   class="form-control">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Address Line 1<span>*</span></label>
