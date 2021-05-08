@@ -38,9 +38,12 @@ import com.dashboard.service.GetUserAddress;
 import com.dashboard.service.GetUserTransaction;
 import com.dashboard.service.GetWallet;
 import com.dashboard.service.NIUMAcceptTerms;
+import com.dashboard.service.NIUMActivateCard;
 import com.dashboard.service.NIUMAddCustomer;
+import com.dashboard.service.NIUMGetCard;
 import com.dashboard.service.NIUMGetTerms;
 import com.dashboard.service.NIUMWalletBalance;
+
 import com.dashboard.service.NiumGetCustomer;
 import com.dashboard.service.OauthAuthentication;
 import com.dashboard.service.PostKycDocuments;
@@ -608,7 +611,7 @@ public class ClientController {
 			@RequestParam("CustomerHashID") String tempcutomerhashid,
 			@RequestParam("WalletHashID") String tempwallethashid) {
 		OauthAuthentication newauth = new OauthAuthentication();
-		String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password, request,
+		String oauthAccessToken = newauth.createOauthToken(Constant.nisgEmail, Constant.nisgPassword, request,
 				Constant.OauthUrl);
 		FetchUserList user = new FetchUserList();
 
@@ -636,7 +639,7 @@ public class ClientController {
 	@ResponseBody
 	public String ExchangeRateNIUM(HttpSession session, HttpServletRequest request) {
 		OauthAuthentication newauth = new OauthAuthentication();
-		String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password, request,
+		String oauthAccessToken = newauth.createOauthToken(Constant.nisgEmail, Constant.nisgPassword, request,
 				Constant.OauthUrl);
 		GetExchangeRateNIUM exchangerte = new GetExchangeRateNIUM();
 		String response = exchangerte.exchangerate(Constant.xApiKey, Constant.clientHasId, oauthAccessToken, "EUR",
@@ -666,7 +669,8 @@ public class ClientController {
 	}
 	@RequestMapping(value = "/indexnew", method = RequestMethod.POST)
 	public ModelAndView createUserAPICalling(@ModelAttribute("createUser") NIUMCreateUserBean createUserBean,
-			HttpServletRequest request,HttpServletResponse httpServletResponse) throws UnknownHostException  {
+			HttpServletRequest request,HttpServletResponse httpServletResponse) throws UnknownHostException  
+	{
 		
 
 		ModelAndView  mv = new  ModelAndView("completeprofilenewsuccess");
@@ -678,35 +682,67 @@ public class ClientController {
 		
 		
 		
-		/*
-		 * String clientkahash= (String)
-		 * request.getSession().getAttribute("clienthash"); String ipax= (String)
-		 * request.getSession().getAttribute("ipax");
-		 */
 		
 
 		 
 		
 		mvsame.addObject("fname", createUserBean.getFirst_name());
+		request.getSession().setAttribute("fname", createUserBean.getFirst_name());
+		
 		mvsame.addObject("mname", createUserBean.getMiddle_name());
+		request.getSession().setAttribute("mname", createUserBean.getMiddle_name());
+		
 		mvsame.addObject("lname", createUserBean.getLast_name());
+		request.getSession().setAttribute("lname", createUserBean.getLast_name());
+		
 		mvsame.addObject("dob", createUserBean.getBday());
-		mvsame.addObject("emall", createUserBean.getEmail());
+		request.getSession().setAttribute("dob", createUserBean.getBday());
+		
+		mvsame.addObject("email", createUserBean.getEmail());
+		request.getSession().setAttribute("email", createUserBean.getEmail());
+		
 		mvsame.addObject("pnumber", phon);
+		request.getSession().setAttribute("pnumber", phon);
+		
 		mvsame.addObject("nationality", createUserBean.getNationality());
-	
+		request.getSession().setAttribute("nationality", createUserBean.getNationality());
+		
 		mvsame.addObject("dline1", createUserBean.getAddress_line_1());
+		request.getSession().setAttribute("dline1", createUserBean.getAddress_line_1());
+		
 		mvsame.addObject("dline2", createUserBean.getAddress_line_2());
+		request.getSession().setAttribute("dline2", createUserBean.getAddress_line_2());
+		
 		mvsame.addObject("dcountry", createUserBean.getCountry());
+		request.getSession().setAttribute("dcountry", createUserBean.getCountry());
+		
 		mvsame.addObject("dcity", createUserBean.getCity());
+		request.getSession().setAttribute("dcity", createUserBean.getCity());
+		
 		mvsame.addObject("dstate", createUserBean.getState());
+		request.getSession().setAttribute("dstate", createUserBean.getState());
+		
 		mvsame.addObject("dpost", createUserBean.getPost_code());
+		request.getSession().setAttribute("dpost", createUserBean.getPost_code());
+		
 		mvsame.addObject("bcountry", createUserBean.getBilling_country());
+		request.getSession().setAttribute("bcountry", createUserBean.getBilling_country());
+		
 		mvsame.addObject("bline1", createUserBean.getBilling_address_line_1());
+		request.getSession().setAttribute("bline1", createUserBean.getBilling_address_line_1());
+		
 		mvsame.addObject("bline2", createUserBean.getBilling_address_line_2());
+		request.getSession().setAttribute("bline2", createUserBean.getBilling_address_line_2());
+		
 		mvsame.addObject("bcity", createUserBean.getBilling_city());
+		request.getSession().setAttribute("bcity", createUserBean.getBilling_city());
+		
 		mvsame.addObject("bstate", createUserBean.getBilling_state());
+		request.getSession().setAttribute("bstate", createUserBean.getBilling_state());
+		
 		mvsame.addObject("bpost", createUserBean.getBilling_post_code());
+		request.getSession().setAttribute("bpost", createUserBean.getBilling_post_code());
+		
 		NIUMCreateCustomerBean customerBeanNium = new NIUMCreateCustomerBean();////// Object Creation of NIUMCustomerBean////
 		customerBeanNium.setEmail(createUserBean.getEmail());
 		request.getSession().setAttribute("customemailsession",createUserBean.getEmail());
@@ -716,8 +752,8 @@ public class ClientController {
 		
 
 		
-		customerBeanNium.setAgent_code((String) request.getSession().getAttribute(Constant.Agent_Code));
-		customerBeanNium.setSub_agent_code((String) request.getSession().getAttribute(Constant.Sub_Agent_Code));
+		customerBeanNium.setAgent_code("Agent_Code");
+		customerBeanNium.setSub_agent_code("Sub_Agent_code");
 		customerBeanNium.setClient_agent_subAgent_name("Stylopay");
 		customerBeanNium.setUsername(createUserBean.getEmail());
 		customerBeanNium.setCountry_isd_code("91");
@@ -736,21 +772,28 @@ public class ClientController {
 		customerBeanNium.setBillingState(createUserBean.getBilling_state());
 		
 		
-if (createUserBean.getBilling_post_code() == null || createUserBean.getBilling_post_code().equals("") || createUserBean.getBilling_post_code().equals("")) {
+if (createUserBean.getBilling_post_code() == null || createUserBean.getBilling_post_code().equals("") || createUserBean.getBilling_post_code().equals("")) 
+
+	{
 	customerBeanNium.setBillingZipCode("NA");
 	customerBeanNium.setCorrespondenceZipCode("NA");
-}  else {
+	}  
+	else 
+		{
 		customerBeanNium.setBillingZipCode(createUserBean.getBilling_post_code());
 		customerBeanNium.setCorrespondenceZipCode(createUserBean.getBilling_post_code() );
-}
+		}
 
 
 
-if (createUserBean.getPost_code() == null || createUserBean.getPost_code().equals("") || createUserBean.getPost_code().equals(" ") ) {
-customerBeanNium.setDeliveryZipCode("NA");
-}  else {
-customerBeanNium.setDeliveryZipCode(createUserBean.getPost_code());
-}
+	if (createUserBean.getPost_code() == null || createUserBean.getPost_code().equals("") || createUserBean.getPost_code().equals(" ") ) 
+	{
+		customerBeanNium.setDeliveryZipCode("NA");
+	}  
+	else 
+	{
+		customerBeanNium.setDeliveryZipCode(createUserBean.getPost_code());
+	}
 
 		
 		
@@ -794,23 +837,24 @@ customerBeanNium.setDeliveryZipCode(createUserBean.getPost_code());
 /////////Get Terms And Conditions/////////////
 		
 				NIUMGetTerms terms = new NIUMGetTerms();
-			String gettermname = terms.getterms(Constant.clientHasId,Constant.xApiKey, request, Constant.NIUMUrl)  ;  
-			JSONObject fetchUserjsonObj = new JSONObject(gettermname);
+				String gettermname = terms.getterms(Constant.clientHasId,Constant.xApiKey, request, Constant.NIUMUrl)  ;  
+				JSONObject fetchUserjsonObj = new JSONObject(gettermname);
 			
-			request.getSession().setAttribute("termname", fetchUserjsonObj.getString("name"));
-			request.getSession().setAttribute("version", fetchUserjsonObj.getString("versionId"));
-			String gettermsname = fetchUserjsonObj.getString("name");
-			String gettermsversionid = fetchUserjsonObj.getString("versionId");
+				request.getSession().setAttribute("termname", fetchUserjsonObj.getString("name"));
+				request.getSession().setAttribute("version", fetchUserjsonObj.getString("versionId"));
+				String gettermsname = fetchUserjsonObj.getString("name");
+				String gettermsversionid = fetchUserjsonObj.getString("versionId");
 			
 			/* JSONObject getversion = new JSONObject(gettermname); */
 			
 			try {
 				fetchUserjsonObj.get("name");
 				
-			}
+				}
 			
 			
-			catch (Exception termsexceptios) {
+			catch (Exception termsexceptios) 
+			{
 				ModelAndView  mvnew = new  ModelAndView("completeprofilenew");
 				
 				 request.getSession().setAttribute("failmessagecreateuser",  "Failed To Get T&C , please try again later");
@@ -822,98 +866,64 @@ customerBeanNium.setDeliveryZipCode(createUserBean.getPost_code());
 		String response = addcustomer.createUser(Constant.clientHasId,Constant.xApiKey,customerBeanNium, Constant.NIUMUrl);
 		JSONObject fetchUserjson= new JSONObject(response);
 		
-		request.getSession().setAttribute("nameof", fetchUserjson.getString("customerHashId"));
+		request.getSession().setAttribute("cushas", fetchUserjson.getString("customerHashId"));
 		String customerhash = fetchUserjson.getString("customerHashId");
 		
 		
-		/*
-		 * ////////////////////store to s3 JSONObject input = new
-		 * JSONObject(customerBeanNium);
-		 * 
-		 * 
-		 * Regions clientRegion = Regions.EU_WEST_1; String bucketName =
-		 * "stylopaysandboxjar"; S3Object fullObject = null;
-		 * 
-		 * try { AmazonS3 s3Client =
-		 * AmazonS3ClientBuilder.standard().withRegion(clientRegion).withCredentials(new
-		 * AWSCredentialsProvider() {
-		 * 
-		 * @Override public void refresh() { }
-		 * 
-		 * @Override public AWSCredentials getCredentials() { return new
-		 * AWSCredentials() {
-		 * 
-		 * @Override public String getAWSSecretKey() { return
-		 * System.getProperty("secretKey");}
-		 * 
-		 * @Override public String getAWSAccessKeyId() { return
-		 * System.getProperty("accessKey");
-		 * 
-		 * } }; } }).build();
-		 */
-
-// Get an object and print its contents.
-		/*
-		 * ///////////////////////Store to s3 String str =
-		 * input.toString()+"\n"+response; InputStream kycinputtitle =
-		 * getInputStream(str, "UTF-8") ; PutObjectRequest title = new
-		 * PutObjectRequest(bucketName,"CreateUserDumpSandbox/"+
-		 * createUserBean.getEmall()+".txt", kycinputtitle,new ObjectMetadata());
-		 * ObjectMetadata metadatanew = new ObjectMetadata();
-		 * metadatanew.setContentType("plain/text");
-		 * metadatanew.addUserMetadata("title", "requesttitle");
-		 * title.setMetadata(metadatanew);
-		 * 
-		 * s3Client.putObject(title); } catch (Exception e) { }
-		 */
-      	///////////////store to s3
-		/*
-		 * JSONObject json1 = new JSONObject(response); JSONObject json = new
-		 * JSONObject(response);
-		 */
 		
-		//JSONObject json1 = new JSONObject(response);
-		/*
-		 * try { json1.get("responseObject");
-		 * request.getSession().setAttribute("failmessagecreateuser",
-		 * json1.get("responseObject").toString()); return mvsame; } catch (Exception
-		 * badrequest) { ///left blank }
-		 * 
-		 * try {
-		 */
-		/*
-		 * if(json1.get("customerHashId") != null) {
-		 */
+
+
 		OauthAuthentication newauth = new OauthAuthentication();
-		String oauthAccessToken = newauth.createOauthToken(Constant.Email, Constant.Password, request,Constant.OauthUrl);
-				/*request.getSession().setAttribute("customhash", json1.get("customerHashId").toString());*/
+		String oauthAccessToken = newauth.createOauthToken(Constant.nisgEmail, Constant.nisgPassword, request,Constant.OauthUrl);
 				
-				/*request.getSession().setAttribute("succcessmsgcreateuser", json1.get("customerHashId").toString());*/
-				/*String email = (String) request.getSession().getAttribute("email");
-		      	String password = (String) request.getSession().getAttribute("password");*/
-			/*	OauthAuthentication newauth = new OauthAuthentication();*/
-					///accept terms and conditions
 			     NIUMAcceptTerms acceptttt = new NIUMAcceptTerms();
 				String acc = acceptttt.accepterms(Constant.clientHasId, Constant.xApiKey, oauthAccessToken, gettermsname, gettermsversionid, customerhash, request, Constant.NIUMUrl);
 			
-	/*	}*/
-		/*catch (Exception e) 
-			{
-			////ModelAndView  mvnew = new  ModelAndView("completeprofilenew");
-				try {
-						request.getSession().setAttribute("failmessagecreateuser",  json1.get("errors").toString());
-			     	}
-				catch(Exception ex) {
-				 
-				
-				 request.getSession().setAttribute("failmessagecreateuser",  json1.get("message").toString());
-				 	 }*/
-			        return mvsame;
-	        	               }
-                    
+	
+			        return mv;
+	}
+	//nium get cards////
+	@RequestMapping(value = "/customercards", method = RequestMethod.GET)
+	@ResponseBody
+	public String getPanNumbhher(HttpServletRequest request,HttpServletResponse httpServletResponse,@RequestParam("cus") String customerhashid,@RequestParam("wal") String wallethashid) {
+		
+		
+		OauthAuthentication newauth = new OauthAuthentication();
+	  String oauthAccessToken = newauth.createOauthToken(Constant.nisgEmail, Constant.nisgPassword,request, Constant.OauthUrl);
+		
+	  NIUMGetCard user = new NIUMGetCard();
+		
+		String response = user.GetCustomerCard(Constant.xApiKey,Constant.clientHasId,oauthAccessToken,customerhashid,wallethashid,request,Constant.NIUMUrl);
+		
+		return response;
+	}
+      	               
+      
+	/////////Activate Card////////
+@RequestMapping(value = "/nisgblockit", method = RequestMethod.POST)
+@ResponseBody
+public String unblockit(@RequestParam("cushas") String cushas,
+		@RequestParam("walhas") String walhas, @RequestParam("carhas") String carhas,
+		@RequestParam("instruction") String instruction, HttpServletRequest request, Model model,HttpServletResponse httpServletResponse)
+				throws SQLException, JSONException {
+
+
+
+
+	OauthAuthentication newauth = new OauthAuthentication();
+
+	String oauthAccessToken = newauth.createOauthToken(Constant.nisgEmail, Constant.nisgPassword,request, Constant.OauthUrl);
+	
+
+	NIUMActivateCard activeblock = new NIUMActivateCard();
+
+	return activeblock.unblock(instruction,Constant.xApiKey,Constant.clientHasId,oauthAccessToken, cushas, walhas, carhas,request,Constant.OauthUrl,Constant.NIUMUrl,"","");
+
+}
+}
 		
 
-								/* return mv; */
-                             }
+								
+                             
 
 

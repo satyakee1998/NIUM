@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored = "false" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -28,7 +29,7 @@
       <!-- Add Customer Page Starts -->
       <div class="col-xl-9 addCustSection">
       	 <div class="headingSection">
-            <div class="userBackBtn"> <a href="/nisgsponsoredaccounts"><img src="resources/nisg/images/userbackbtn.png" width="9" height="15" alt="Back" title="Back"></a> </div>
+            <!-- <div class="userBackBtn"> <a href="/nisgsponsoredaccounts"><img src="resources/nisg/images/userbackbtn.png" width="9" height="15" alt="Back" title="Back"></a> </div> -->
          	<h1>Add Customer</h1>
        <input type="hidden"  value="${customhash}" id="customercheck"> 	
           <input type="hidden"  value="<%= session.getAttribute("DashBoardName") %>" id="dashboardname"> 	
@@ -78,16 +79,16 @@
 																		
 																		%>
               <input type="hidden" value="<%= session.getAttribute("email") %>" id="backendmail">  
-         <form action="/indexnew" method ="POST" id="adcustomerform">
+         <form action="/nisguserlist" method ="GET" id="adcustomerform">
          	<h2>Personal Details</h2>
          	<div class="formElementCon formElementConLR">
                 <div class="form-group">
                     <label class="control-label">First name<span>*</span></label>
-                    <input type="text" name="first_name" onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="15" class="form-control" value="${fname}" required>
+                    <input type="text" name="first_name" onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="15" class="form-control" value="<%= session.getAttribute("fname") %>" required>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Middle Name</label>
-                    <input type="text" name="middle_name"  class="form-control"  onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="15" value="${mname}">
+                    <input type="text" name="middle_name"  class="form-control"  onkeypress="return ((event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57));" maxlength="15" value="mname">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Last Name<span>*</span></label>
@@ -111,7 +112,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Email Id<span>*</span></label>
-                    <input type="email" name="emall" id="customemail" class="form-control" value="${emall}" required>
+                    <input type="email" name="email" id="customemail" class="form-control" value="${email}" required>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Nationality<span>*</span></label>
@@ -884,7 +885,7 @@
                   </div>
                   
                   <div class="addCustSubmitBtn">
-                    <button type="submit" class="blueButton">Submit</button>
+                    <button type="submit" class="blueButton">OKAY</button>
                   </div>
             	<div class="clearfix"></div>
             </div>

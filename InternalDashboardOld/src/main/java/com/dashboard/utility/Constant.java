@@ -16,4 +16,7 @@ public interface Constant {
 	String nisgEmail="testadminnisg01@yopmail.com";
 	String nisgPassword = "W@llet123";
 	String customererid="af793050-2148-4966-a28a-9d23bab54c52";
+	String customerHasId="a609e834-823f-43bf-8bf9-64c800b07d36";
+	String walletHasId = "650bd9ea-02e8-42f5-b560-f9ec210f94fc";
+
 }

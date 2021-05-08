@@ -413,6 +413,301 @@ function exchangerate()
 });
 
 }
+/////////Get Card////////////////
+function getcustomercards( )
 
+{	
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	var temcushashid =  urlParams.get('member_ID');
+	var tempwalhashid =  urlParams.get('wallet_hash_ID');
+	 
+	 
+	$.ajax({
+		
+	     type : "GET",
+	     url : "/customercards",
+	     timeout : 100000,
+	 	 data :{cus:temcushashid,wal:tempwalhashid},
+	     success : function(data) {	
+		  
+	    	 
+		  	var obj = JSON.parse(data);
+		  	
+		    var obj = obj['content'];
+		    
+		    
+	         var table =  $('#body');
+            
+	         
+				
+	         
+	         $('#body').empty()   //clear the table
+	         
+	         for(var a=0; a<obj.length; a++)
+	    		{
+	    		var val =obj[a];
+	    		
+		
+			    	if (val['cardType'] == 'GPR_VIR'  &&  val['issuanceType'] == 'primaryCard' ) {
+			
+	       document.getElementById('hiddencard').value = val['cardHashId'];
+
+	       document.getElementById('hiddencardon').value = val['cardHashId'];
+
+
+		}	
+
+			
+	    		
+	    		
+	    		if (val['cardStatus'] == 'VIRTUAL_ACTIVE' && val['cardType'] == 'GPR_VIR' ) {
+
+	    		
+	    		
+	    		var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Virtual"+"\n"+'</td><td align="left"  valign="middle">'
+				+"<span class='statusActiveCard'>Active</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardType']+'"'+")' class='actionBlockCard'  data-toggle='modal' data-target='#blockAndPauseModal'>Block</a> <a href='#' onclick='return seeinfo("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='iBtn' title='Card Info' >i</a> </td></tr>";
+	    		
+			 }
+		
+		else if (val['cardStatus'] == 'VIRTUAL_ACTIVE' && val['cardType'] == 'GPR_PHY' ) {
+
+	    		
+	    		
+	    		var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Physical"+"\n"+'</td><td align="left"  valign="middle">'
+				+"<span class='statusActiveCard'>Active</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardType']+'"'+")' class='actionBlockCard'  data-toggle='modal' data-target='#blockCardButton'>Block</a> <a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='changePinBtn' data-toggle='modal' data-target='#changePinModal'>Change PIN</a></td></tr>";
+	    		
+			 }
+		
+		
+			else if ( val['cardStatus'] == 'ACTIVE' && val['cardType'] == 'GPR_PHY')
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Physical"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusActiveCard'>Active</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardType']+'"'+")' class='actionBlockCard'  data-toggle='modal' data-target='#blockAndPauseModal'>Block</a><a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='changePinBtn' data-toggle='modal' data-target='#changePinModal'>Change PIN</a> </td></tr>";
+	    		
+			
+		}
+		
+			else if ( val['cardStatus'] == 'ACTIVE' && val['cardType'] == 'GPR_VIR')
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Virtual"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusActiveCard'>Active</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return select("+'"'+val['maskedCardNumber']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardType']+'"'+")' class='actionBlockCard'  data-toggle='modal' data-target='#blockAndPauseModal'>Block</a> <a href='#' onclick='return seeinfo("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='iBtn' title='Card Info' >i</a></td></tr>";
+	    		
+			
+		}
+		
+		else if ( val['cardStatus'] == 'TEMP_BLOCK' && val['cardType'] == 'GPR_VIR')
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Virual"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusInactiveCard'>Temporary Block</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return unblock("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='actionActivateCard'>Unblock</a> <a href='#' onclick='return seeinfo("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='iBtn' title='Card Info' >i</a> </td></tr>";
+	    		
+			
+		}
+		else if ( val['cardStatus'] == 'TEMP_BLOCK' && val['cardType'] == 'GPR_PHY')
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Physical"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusInactiveCard'>Temporary Block</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return unblock("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='actionActivateCard'>Unblock</a> </td></tr>";
+	    		
+			
+		}
+		
+		else if ( val['cardStatus'] == 'P_BLOCK' && val['cardType'] == 'GPR_PHY' )
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Physical"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusInactiveCard'>Permanent Block</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +" </td></tr>";
+	    		
+			
+		}
+		else if ( val['cardStatus'] == 'P_BLOCK' && val['cardType'] == 'GPR_VIR' )
+		{
+			
+			var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Virtual"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusInactiveCard'>Permanent Block</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +" </td></tr>";
+	    		
+			
+		}
+		else 
+		{
+			
+		 		var tab='<tr><td align="left" valign="middle" id="maskedcard'+a+'" value="'+val['maskedCardNumber']+'" >'+val['maskedCardNumber']+"\n"+'</td><td align="left" valign="middle">'
+				+"Physical"+"\n"+'</td><td align="left" valign="middle">'
+				+"<span class='statusInactiveCard'>Inactive</span>"+"\n"+'</td><td align="left" valign="middle">'
+               +val['createdAt']+"\n"+'</td><td align="left" valign="middle">'
+				+val['updatedAt']+"\n"+'</td><td align="left" valign="middle">'
+			 +"<a href='#' onclick='return activate("+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+','+'"'+val['cardHashId']+'"'+")' class='actionActivateCard'>Activate</a> </td></tr>";
+	    		
+			
+		}
+			    		$('#body').append(tab)
+			    		}
+
+
+
+
+
+	         ////document.getElementById('addon').style.display = 'block';
+	        //// document.getElementById('newcard').style.display = 'none';
+	 		
+	        /* "+val['cardHashId']+"*/
+	      
+				
+	}	
+	       
+	     }
+	
+	
+	     
+	 );
+
+}
+////////Activate Card///////////////
+function activate(cardHashId,cardHashId,cardHashId)
+
+{
+	
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	var temcushashid =  urlParams.get('member_ID');
+	var tempwalhashid =  urlParams.get('wallet_hash_ID');
+	var tempinstruction=   "activateCard";
+	var cardhashid = cardHashId;
+
+
+	
+	 swal({
+		  
+		    icon: "resources/loader.gif",
+		    button: false,
+		    closeOnClickOutside: false,
+		    closeOnEsc: false
+		  });
+	 
+	 
+
+		$.ajax({
+			
+		     type : "POST",
+		     url : "/nisgblockit",
+		     data : {cushas:temcushashid,walhas:tempwalhashid,instruction:tempinstruction,carhas:cardhashid},
+		     timeout : 100000,
+		     
+		     success : function(data)
+		     
+		     
+		     
+		     
+		     
+		     
+		     
+		     
+{					
+		    	 
+		    	 swal.close()
+		   		 
+		    	 var obj = JSON.parse(data);
+if( obj['httpStatus'] ==  'BAD_REQUEST' || obj['status'] ==  'BAD_REQUEST')
+		    	 {
+		    			swal(obj['message'], {
+  buttons: "Back",
+ icon: "info",
+  
+});
+activate.abort();
+
+		    	 }	
+		    	 if( obj['httpStatus'] ==  'INTERNAL_SERVER_ERROR')
+		    	 {
+		    		 	swal(obj['message'], {
+  buttons: "Back",
+ icon: "info",
+  
+});
+activate.abort();
+		    	 }
+		    	 
+		    	 
+		    	 else if (obj['message'] ==  "") 
+		    	  {
+		    			 	swal(obj['message'], {
+  buttons: "Back",
+ icon: "info",
+  
+});
+activate.abort();
+		    	  }
+		    	
+
+ else  if  (obj['status'] == 'Active')
+		    	 {
+		    			 		swal("Card Activated!", {
+  buttons: false,
+  
+ icon: "success",
+  timer: 2000,
+});
+return getcustomercards( );
+		}
+ 
+		    	 else
+		    	 {
+		    		 			 	swal(obj['message'], {
+  buttons: "Back",
+ icon: "info",
+  
+});
+activate.abort();
+			    		
+		    	 }
+		    		 
+		    		 },
+		     error : function(e) {
+		         console.log("ERROR: ", e);
+		         display(e);
+		     },
+		     done : function(e) {
+		         console.log("DONE");
+		     } 
+		     
+		 });								
+		
+	return false;
+	}
 
 

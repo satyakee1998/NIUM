@@ -28,6 +28,8 @@
 <body onload=" CustomerDetails">
 	<input type="hidden" id="MemberID" value="${member_ID}"> 
 	<input type="hidden" id="email_Id" value="${Uemail}">
+	<input type="hidden" id="hiddencard" value=""> 
+	<input type="hidden" id="hiddencardon" value=""> 
 
 
 	<input type="hidden" value="<%=session.getAttribute("email")%>"
@@ -475,7 +477,7 @@
                   <div class="clearfix"></div>
                 </div>
                 </div>
-                <table class="tablemanager" id="cardInfoTable" border="0" align="center" cellpadding="0" cellspacing="0" width="100%">
+                <table class="table" id="cardInfoTable" border="0" align="center" cellpadding="0" cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th align="left" valign="middle">Card number</th>
@@ -489,24 +491,16 @@
 				   <tbody id="body">
                         
                     </tbody>
+                    </table>
+							 <div class="clearfix"></div> 
 							
-	</table>
-		
-						
-	
-							
-							<div class="clearfix"></div>
 						</div>
-
-					
-
 					<div class="clearfix"></div>
 				</div>
 				</div>
 
 		</div>
 	</div>
-
 	<script type="text/javascript" src="resources/js/jquery.js"></script>
 	<script type="text/javascript" src="resources/js/bootstrap-min.js"></script>
 	<script src="resources/js/dashboard.js"></script>

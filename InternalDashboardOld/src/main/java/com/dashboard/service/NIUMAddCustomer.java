@@ -30,6 +30,7 @@ public class NIUMAddCustomer {
 		
 
 			JSONObject createUser = new JSONObject(createUserBean);
+			System.out.print(createUser);
 		OkHttpClient client = new OkHttpClient().newBuilder()
 				.connectTimeout(30, TimeUnit.SECONDS)
   				.readTimeout(30, TimeUnit.SECONDS)

@@ -106,10 +106,10 @@
                 </div> -->
                 <div class="form-group">
                     <label class="control-label">Date of Birth<span>*</span></label>
-                    <input autocomplete="off" type="text" placeholder = "yyyy-mm-dd" class="form-control" value=""  name="bday" onchange="checkDOB()"  id="dateofbirth"   required>
+                    <input autocomplete="off" type="text" placeholder = "yyyy-mm-dd" class="form-control" value=""  name="bday" id="dateofbirth"   required>
               
                 </div>
-                    <input autocomplete="off" type="hidden" placeholder = "yyyy-mm-dd" class="form-control" value=""  name="bday"   id="newdateofbirth"   required>
+                 
               
                 <div class="form-group">
                     <label class="control-label">Phone Number<span>*</span></label>
